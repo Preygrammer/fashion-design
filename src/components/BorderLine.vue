@@ -1,12 +1,12 @@
 <template>
   <div class="wrapper">
-    <div class="categories__border__slash" :style="style"></div>
+    <div class="categories__border__line" :style="style"></div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "CategoriesBorderSlash",
+  name: "BorderLine",
   props: {
     bgColor: String,
     width: String,
@@ -26,7 +26,7 @@ export default {
 
 
 <style scoped>
-.categories__border__slash {
+.categories__border__line {
   height: 2px;
   margin: 10px auto 0;
 }

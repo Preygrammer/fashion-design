@@ -25,8 +25,7 @@ body {
 }
 
 #app {
-  font-family: "Playfair Display", serif, Oswald-Regular, Oswald-Bold,
-    Oswald-Light;
+  font-family: "Playfair Display", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: inherit;

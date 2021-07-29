@@ -2,16 +2,12 @@
   <div :style="bannerProp" class="banner__promo__card">
     <div class="banner__promo__details">
       <h2>{{ title }}</h2>
-      <BorderBottomSlash bgColor="#ffffff" width="30%" location="left" />
+      <BorderLine bgColor="#ffffff" width="30%" location="left" />
       <div class="banner__promo__category">
         {{ category }}
       </div>
       <div class="banner__promo__btn">
-        <button class="show-now-btn">Shop Now
-            <span>
-                <font-awesome-icon :icon="icons" />
-            </span>
-        </button>
+        <Button text="Shop Now" icon="arrow-right" />
       </div>
     </div>
     <img
@@ -23,12 +19,14 @@
 </template>
 
 <script>
-import BorderBottomSlash from "@/components/BorderBottomSlash.vue";
+import BorderLine from "@/components/BorderLine.vue";
+import Button from "@/components/Button.vue";
 
 export default {
-  name: "BannerPromoCards",
+  name: "BannerPromoCard",
   components: {
-    BorderBottomSlash,
+    BorderLine,
+    Button,
   },
   props: {
     title: String,
@@ -75,7 +73,7 @@ export default {
 
 .banner__promo__category {
   text-transform: uppercase;
-  font-family: 'Oswald';
+  font-family: "Oswald";
   font-size: 12px;
   font-weight: 100;
   letter-spacing: 2px;

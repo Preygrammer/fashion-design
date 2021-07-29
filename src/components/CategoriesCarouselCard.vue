@@ -10,17 +10,17 @@
       <div class="categories__title">{{ title }}</div>
       <div class="categories__description">{{ description }}</div>
       <div class="categories__border__slash"></div>
-      <BorderBottomSlash bgColor="#ffffff" width="15%" location="center" />
+      <BorderLine bgColor="#ffffff" width="15%" location="center" />
     </div>
   </div>
 </template>
 
 <script>
-import BorderBottomSlash from "@/components/BorderBottomSlash.vue";
+import BorderLine from "@/components/BorderLine.vue";
 
 export default {
-  name: "CategoriesCarouselCards",
-  components: { BorderBottomSlash },
+  name: "CategoriesCarouselCard",
+  components: { BorderLine },
   props: {
     source: String,
     width: String,

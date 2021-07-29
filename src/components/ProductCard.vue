@@ -12,7 +12,9 @@
       <div class="fpc__details_title">
         {{ title }}
       </div>
-      <div class="fpc__details_price"><span>£</span>{{ price }}.00</div>
+      <div v-if="price" class="fpc__details_price">
+        <span>£</span>{{ price }}.00
+      </div>
     </div>
   </div>
 </template>
@@ -21,7 +23,7 @@
 import SaleTag from "@/components/SaleTag.vue";
 
 export default {
-  name: "FeaturedProductCards",
+  name: "ProductCard",
   components: {
     SaleTag,
   },
@@ -29,6 +31,7 @@ export default {
     source: String,
     title: String,
     width: String,
+    height: String,
     price: [String, Number],
     isSale: Boolean,
   },
@@ -36,6 +39,7 @@ export default {
     style() {
       return {
         width: this.width,
+        height: this.height,
       };
     },
   },
@@ -45,9 +49,9 @@ export default {
 <style scoped>
 .fpc__image {
   height: 375px;
-  width: 19.99%;
   padding: 0 15px;
   position: relative;
+  flex: 1;
 }
 
 .fpc__image img {
