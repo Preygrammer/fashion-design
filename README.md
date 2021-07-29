@@ -1,2 +1,0 @@
-# fashion-design
-eCommerce store
