@@ -9,11 +9,11 @@ import Vue from 'vue'
 import App from './App.vue'
 import Navbar from './components/Navbar.vue'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faUserAlt, faHeart, faSearch, faShoppingBag, faBars, faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { faUserAlt, faHeart, faSearch, faShoppingBag, faBars, faArrowRight, faSearchPlus, faChartBar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import router from './router'
 
-library.add(faUserAlt, faHeart, faSearch, faShoppingBag, faBars, faArrowRight)
+library.add(faUserAlt, faHeart, faSearch, faShoppingBag, faBars, faArrowRight, faSearchPlus, faChartBar)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.component('navbar', Navbar)
