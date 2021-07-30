@@ -1,5 +1,5 @@
 <template>
-  <button class="btn-standard">
+  <button class="btn-standard" :style="style">
     {{ text }}
     <span v-if="icon">
       <font-awesome-icon :icon="icon" />
