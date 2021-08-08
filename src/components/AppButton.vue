@@ -1,5 +1,5 @@
 <template>
-  <button class="btn-standard" :style="style">
+  <button :type="type" class="btn-standard" :style="style">
     {{ text }}
     <span v-if="icon">
       <font-awesome-icon :icon="icon" />
@@ -9,8 +9,9 @@
 
 <script>
 export default {
-  name: "Button",
+  name: "AppButton",
   props: {
+    type: String,
     text: String,
     icon: String,
     height: String,

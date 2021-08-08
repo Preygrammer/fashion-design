@@ -46,7 +46,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .fpc__image {
   height: 375px;
   padding: 0 15px;

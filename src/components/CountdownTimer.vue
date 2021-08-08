@@ -37,6 +37,7 @@ export default {
 .countdown__timer__details {
   display: flex;
   flex-wrap: nowrap;
+  gap: 2px;
 }
 
 .ct__number {
@@ -52,5 +53,6 @@ export default {
   font-size: 20px;
   color: #ffffff;
   text-transform: uppercase;
+  letter-spacing: 4px;
 }
 </style>

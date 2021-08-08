@@ -2,8 +2,8 @@
   <div class="navbar-container">
     <div class="navbar-top">
       <div class="left__side">
-        <IconListItems icons="user-alt" />
-        <IconListItems icons="heart" />
+        <AppIcon icons="user-alt" />
+        <AppIcon icons="heart" />
       </div>
       <div class="center__side">
         <div class="navbar-logo">
@@ -11,38 +11,40 @@
         </div>
       </div>
       <div class="right__side">
-        <IconListItems icons="search" />
-        <IconListItems icons="shopping-bag" />
-        <IconListItems icons="bars" />
+        <AppIcon icons="search" />
+        <AppIcon icons="shopping-bag" :shoppingBagCount="3" />
+        <AppIcon icons="bars" />
       </div>
     </div>
     <div class="navbar-bottom">
-      <ul>
-        <li><router-link to="/">Home</router-link> |</li>
-        <li>
-          <router-link to="/clothing">Clothing</router-link>
-        </li>
-        <li>
-          <router-link to="/collections">Collections</router-link>
-        </li>
-        <li>
-          <router-link to="/journal">Journal</router-link>
-        </li>
-        <li>
-          <router-link to="/contact">Contact</router-link>
-        </li>
-      </ul>
+      <List :hasRouteItems="true" :items="routeItems" />
     </div>
   </div>
 </template>
 
 <script>
-import IconListItems from "./IconListItems.vue";
+import AppIcon from "./AppIcon.vue";
+import List from "./List.vue";
 
 export default {
   name: "Navbar",
   components: {
-    IconListItems,
+    AppIcon,
+    List,
+  },
+  data() {
+    return {
+      routeItems: [
+        {
+          route: "/",
+          displayName: "Home",
+        },
+        { route: "/clothing", displayName: "Clothing" },
+        { route: "/collections", displayName: "Collections" },
+        { route: "/journal", displayName: "Journal" },
+        { route: "/contact", displayName: "Contact" },
+      ],
+    };
   },
 };
 </script>
@@ -57,6 +59,7 @@ export default {
 
 .navbar-top {
   display: flex;
+  padding-top: 14px;
 }
 
 .left__side,
@@ -68,17 +71,30 @@ export default {
 .left__side,
 .right__side {
   color: #ffffff;
-  flex-direction: column;
   padding-top: 52px;
+}
+
+.left__side {
+  text-align: right;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
 .right__side {
   text-align: right;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
-.left__side svg,
-.right__side svg {
-  margin: 0 5px;
+.left__side .icon__wrapper,
+.right__side .icon__wrapper {
+  margin: 0 10px;
+}
+
+.right__side .icon__wrapper:nth-child(2) {
+  margin-right: 18px;
 }
 
 .center__side {
@@ -106,7 +122,7 @@ export default {
   justify-content: center;
   align-items: center;
   height: 58px;
-  margin-top: 19px;
+  margin-top: 5px;
   border-top: 1px solid #2d2d2d;
 }
 

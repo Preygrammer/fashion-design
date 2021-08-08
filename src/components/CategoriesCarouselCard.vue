@@ -1,10 +1,6 @@
 <template>
   <div class="categories__carousel__cards">
-    <img
-      :src="require(`../assets/img/${source}`)"
-      :style="style"
-      :alt="source"
-    />
+    <div class="categories__image" :style="style"></div>
 
     <div class="categories__text">
       <div class="categories__title">{{ title }}</div>
@@ -33,6 +29,7 @@ export default {
       return {
         width: this.width,
         height: this.height,
+        backgroundImage: "url(" + require(`../assets/img/${this.source}`) + ")",
       };
     },
   },
@@ -42,11 +39,12 @@ export default {
 <style scoped>
 .categories__carousel__cards {
   height: 808px;
+  flex: 1;
 }
 
-.categories__carousel__cards img {
-  object-fit: cover;
-  min-width: 480px;
+.categories__image {
+  background-position: center center;
+  background-size: cover;
 }
 
 .categories__text {

@@ -1,22 +1,21 @@
-// import Vue from 'vue'
-// import App from './App.vue'
-
-// Vue.config.productionTip = false
-
-
-
 import Vue from 'vue'
 import App from './App.vue'
-import Navbar from './components/Navbar.vue'
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faUserAlt, faHeart, faSearch, faShoppingBag, faBars, faArrowRight, faSearchPlus, faChartBar } from '@fortawesome/free-solid-svg-icons'
+import { faUserAlt, faHeart, faSearch, faShoppingBag, faBars, faArrowRight, faSearchPlus, faChartBar, faEnvelopeOpen } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 import router from './router'
 
-library.add(faUserAlt, faHeart, faSearch, faShoppingBag, faBars, faArrowRight, faSearchPlus, faChartBar)
+// import './assets/scss/style.scss';
+
+library.add(faUserAlt, faHeart, faSearch, faShoppingBag, faBars, faArrowRight, faSearchPlus, faChartBar, faEnvelopeOpen)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
-Vue.component('navbar', Navbar)
+
+Vue.use(BootstrapVue)
+Vue.use(IconsPlugin)
 
 Vue.config.productionTip = false
 
