@@ -1,0 +1,19 @@
+@mixin font-selection($family, $size, $weight: "", $color: "") {
+    $weight: if($weight=="", normal, $weight);
+    $color: if($color=="", inherit, $color);
+    font-family: $family;
+    font-weight: $weight;
+    font-size: $size;
+    color: $color;
+}
+
+@mixin flex-align-center {
+    display: flex;
+    align-items: center;
+}
+
+@mixin flex-center-all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

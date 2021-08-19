@@ -2,8 +2,8 @@
   <div class="navbar-container">
     <div class="navbar-top">
       <div class="left__side">
-        <AppIcon icons="user-alt" />
-        <AppIcon icons="heart" />
+        <AppIcon icon="user-alt" />
+        <AppIcon icon="heart" />
       </div>
       <div class="center__side">
         <div class="navbar-logo">
@@ -11,9 +11,9 @@
         </div>
       </div>
       <div class="right__side">
-        <AppIcon icons="search" />
-        <AppIcon icons="shopping-bag" :shoppingBagCount="3" />
-        <AppIcon icons="bars" />
+        <AppIcon icon="search" />
+        <AppIcon icon="shopping-bag" :shoppingBagCount="3" />
+        <AppIcon icon="bars" />
       </div>
     </div>
     <div class="navbar-bottom">
@@ -49,7 +49,24 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
+.navbar-logo {
+  font-family: "Poppins";
+  /*Temp*/
+}
+
+a {
+  color: #ffffff;
+  font-family: "Oswald";
+  font-weight: 100;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+a:hover {
+  color: #ffffff;
+}
+
 .navbar-container {
   height: 182px;
   padding: 0 70px;
@@ -135,5 +152,6 @@ export default {
 
 .navbar-bottom ul a {
   color: #ffffff;
+  text-decoration: none !important;
 }
 </style>

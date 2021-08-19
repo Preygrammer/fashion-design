@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="home-wrapper">
     <!-- categories__carousel__container -->
     <div class="categories__carousel__container">
       <div
@@ -75,10 +75,7 @@
             <AppButton text="Shop Now" icon="arrow-right" />
           </div>
         </div>
-        <AppImage
-          :src="require(`../assets/img/${banner.source}`)"
-          :alt="banner.source"
-        />
+        <AppImage :imgSrc="banner.source" :alt="banner.source" />
       </div>
     </div>
     <!-- Promo Banner  -->
@@ -544,7 +541,7 @@ import AppImage from "@/components/AppImage.vue";
 import Slide from "@/components/Slide.vue";
 import AppInput from "@/components/AppInput.vue";
 import Overlay from "@/components/Overlay.vue";
-import "../assets/scss/home.scss";
+import "../assets/scss/pages/_home.scss";
 
 export default {
   name: "Home",

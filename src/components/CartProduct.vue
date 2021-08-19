@@ -1,12 +1,11 @@
 <template>
-  <table>
+  <div class="cart__product">
     <slot />
-  </table>
+  </div>
 </template>
 
 <script>
 export default {
-  name: "Table",
-  mounted() {},
+  name: "CartProduct",
 };
 </script>

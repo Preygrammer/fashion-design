@@ -1,22 +1,5 @@
 /* Navbar  */
 
-.navbar-logo {
-    font-family: "Poppins";
-    /*Temp*/
-}
-
-a {
-    color: #ffffff;
-    font-family: "Oswald";
-    font-weight: 100;
-    font-size: 12px;
-    letter-spacing: 2px;
-}
-
-a:hover {
-    color: #ffffff;
-}
-
 
 /* Categories Carousel */
 
@@ -366,7 +349,7 @@ a:hover {
 /* Newsletter */
 
 .newsletter__container {
-    background-image: url("../img/pexels-anfisa-eremina-2543042.jpg");
+    background-image: url("../../img/pexels-anfisa-eremina-2543042.jpg");
     background-size: cover;
     padding: 53px 0 70px;
     opacity: 100%;
@@ -431,54 +414,5 @@ a:hover {
         flex-direction: column;
         text-align: center;
         align-items: center;
-    }
-}
-
-
-/* Footer */
-
-.footer__container {
-    min-height: 285px;
-    display: flex;
-    align-items: center;
-    flex-flow: column;
-    background-color: #181818;
-    padding: 45px 0 39px;
-    h1 {
-        color: #ffffff;
-        font-family: "Poppins";
-        font-size: 80px;
-        line-height: 75px;
-        margin-bottom: 30px;
-    }
-}
-
-.footer__navigation {
-    ul {
-        list-style: none;
-        display: flex;
-        gap: 55px;
-    }
-    ul li a {
-        font-family: "Oswald";
-        font-size: 12px;
-        font-weight: 100;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        text-decoration: none
-    }
-    .fs__social__list {
-        padding-top: 30px;
-    }
-}
-
-.footer__social .fs__social__list {
-    padding-top: 30px;
-    img {
-        height: 19px;
-        padding: 0 25px;
-    }
-    img:nth-child(4) {
-        padding-left: 70px;
     }
 }

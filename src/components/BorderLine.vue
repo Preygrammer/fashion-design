@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="border-wrapper">
     <div class="categories__border__line" :style="style"></div>
   </div>
 </template>
@@ -25,7 +25,7 @@ export default {
 </script>
 
 
-<style scoped>
+<style>
 .categories__border__line {
   height: 2px;
   margin: 10px auto 0;

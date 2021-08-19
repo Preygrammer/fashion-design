@@ -1,0 +1,17 @@
+%Poppins-white {
+    font-family: $Poppins;
+    color: $primaryColor;
+}
+
+%flex-column-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+%flex-center-all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

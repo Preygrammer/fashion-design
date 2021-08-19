@@ -1,9 +1,10 @@
 <template>
   <button :type="type" class="btn-standard" :style="style">
-    {{ text }}
+    <slot />
+    <!-- {{ text }}
     <span v-if="icon">
       <font-awesome-icon :icon="icon" />
-    </span>
+    </span> -->
   </button>
 </template>
 
@@ -11,9 +12,10 @@
 export default {
   name: "AppButton",
   props: {
-    type: String,
-    text: String,
-    icon: String,
+    type: {
+      type: String,
+      default: "button",
+    },
     height: String,
     width: String,
     border: String,
@@ -35,13 +37,13 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .btn-standard {
   background: transparent;
   color: #ffffff;
   width: 125px;
   height: 30px;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   border: 2px solid #ffffff;
   font-family: "Oswald";
   font-size: 10px;

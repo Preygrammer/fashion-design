@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex gap-3">
+  <div class="d-flex gap__5">
     <div class="star" v-for="rate in 5 - rating + rating" :key="rate">
       <img
         :src="
@@ -7,7 +7,7 @@
             rate <= rating ? 'star-selected' : 'star'
           }.svg`)
         "
-        alt=""
+        :class="rate <= rating ? 'star-selected-white' : 'star-unselected'"
       />
     </div>
   </div>
@@ -18,8 +18,11 @@ export default {
   name: "RatingStar",
   props: {
     rating: Number, //ex: pass 4 it will be rated 4 star
+    isColorWhite: {
+      type: Boolean,
+      default: false,
+    },
   },
-  mounted() {},
 };
 </script>
 
@@ -28,7 +31,7 @@ export default {
   height: 12px;
 }
 
-.gap-3 {
+.gap__5 {
   gap: 5px;
 }
 </style>

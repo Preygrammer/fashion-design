@@ -1,6 +1,6 @@
 <template>
   <div class="icon__wrapper">
-    <font-awesome-icon :icon="icons" />
+    <font-awesome-icon :icon="icon" />
     <span class="shopping__bag__count" v-if="shoppingBagCount">{{
       shoppingBagCount
     }}</span>
@@ -11,7 +11,7 @@
 export default {
   name: "IconListItems",
   props: {
-    icons: String,
+    icon: String,
     url: String,
     shoppingBagCount: Number,
   },

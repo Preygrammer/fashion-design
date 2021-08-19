@@ -1,0 +1,130 @@
+.cart__hero {
+    position: relative;
+    background-image: url("../../img/pexels-anfisa-eremina-2543042-180.jpg");
+    background-size: cover;
+    background-position: center center;
+    height: 230px;
+    @extend %flex-column-center;
+    &__overlay {
+        height: 100%;
+        width: 100%;
+        background-color: #0000009a;
+        position: absolute;
+    }
+    &__title {
+        @include font-selection($PlayfairDisplay,
+        72px,
+        $regular,
+        $primaryColor);
+        text-align: center;
+        position: relative;
+        z-index: 99;
+    }
+    .border-wrapper {
+        width: 100%;
+        position: relative;
+        z-index: 99;
+    }
+}
+
+.cart__body {
+    display: flex;
+    max-width: 1140px;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    padding: 65px 0 112px;
+}
+
+.cart__product {
+    position: relative;
+    width: 65.79%;
+    margin-right: 15px;
+    padding: 30px 0;
+    &__heading {
+        display: flex;
+        @include font-selection($Oswald,
+        12px,
+        $bold);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    &__heading__title {
+        &:nth-child(1) {
+            width: 50%;
+        }
+        &:nth-child(2) {
+            width: 25%;
+            text-align: center;
+        }
+        &:nth-child(3) {
+            width: 25%;
+            text-align: center;
+        }
+    }
+    .border-wrapper {
+        width: 100%;
+    }
+}
+
+.cart__items {
+    display: flex;
+    padding: 32px 0;
+    @include font-selection($Poppins,
+    14px,
+    $regular);
+    &__main {
+        display: flex;
+        width: 50%;
+    }
+    &__close {
+        @include flex-align-center;
+    }
+    &__image {
+        @include flex-align-center;
+        margin-left: 28px;
+    }
+    &__image img {
+        width: 98px;
+        height: 112px;
+        object-fit: cover;
+    }
+}
+
+.item__details {
+    margin-left: 16px;
+}
+
+.cart__items__incrementor {
+    width: 25%;
+    @include flex-center-all;
+}
+
+.item__total {
+    @include flex-center-all;
+    width: 25%;
+}
+
+.incrementor {
+    text-align: center;
+    button {
+        width: auto;
+        &:nth-child(3) {
+            transform: rotate(180deg);
+        }
+    }
+    &__value {
+        width: auto;
+    }
+    img {
+        height: 10px;
+        width: 10px;
+    }
+}
+
+.cart__sidebar {
+    width: 35.21%;
+    background-color: #f0f0f0;
+    margin-left: 15px;
+    padding: 25px;
+}
