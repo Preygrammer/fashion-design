@@ -7,7 +7,9 @@
       class="cart__items"
     >
       <div class="cart__items__main">
-        <div class="cart__items__close">x</div>
+        <div class="cart__items__close" @click="removeItem(cart.productId)">
+          ✕
+        </div>
         <div class="cart__items__image">
           <AppImage :imgSrc="cart.productImage" />
           <div class="item__details">
@@ -20,19 +22,31 @@
       </div>
       <div class="cart__items__incrementor">
         <div class="incrementor">
-          <AppButton>
-            <AppImage
-              imgSrc="triangular-filled-up-arrow.svg"
-              @click.native="itemsCount = $functions.increment(itemsCount, 1)"
-            />
+          <AppButton
+            @click.native="
+              productItemTotal(cart.productQuantity, cart.productPrice)
+            "
+          >
+            <AppImage imgSrc="triangular-filled-up-arrow.svg" />
           </AppButton>
-          <div class="incrementor__value">1</div>
-          <AppButton>
+          <div :key="cart.productId" class="incrementor__value">
+            {{ cart.productQuantity }}
+          </div>
+          <AppButton
+            @click.native="
+              cart.productQuantity = $functions.decrement(
+                cart.productQuantity,
+                1
+              )
+            "
+          >
             <AppImage imgSrc="triangular-filled-up-arrow.svg" />
           </AppButton>
         </div>
       </div>
-      <div class="item__total">£89.00</div>
+      <div class="item__total">
+        <span>£</span>{{ cart.productPrice.toFixed(2) }}
+      </div>
     </div>
   </div>
 </template>
@@ -50,5 +64,23 @@ export default {
   props: {
     cartItems: Array,
   },
+  data() {
+    return {};
+  },
+  methods: {
+    removeItem(id) {
+      this.$emit("removeItem", id);
+    },
+
+    // productItemTotal(quantity, price) {
+    //   quantity = quantity += 1;
+    //   price = price * 2;
+    // },
+  },
+  // @click.native="
+  //             cart.productQuantity = $functions.increment(
+  //               cart.productQuantity,
+  //               1
+  //             )
 };
 </script>

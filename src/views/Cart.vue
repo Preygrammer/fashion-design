@@ -16,31 +16,108 @@
         </div>
         <BorderLine bgColor="#252525" width="100%" location="center" />
 
-        <CartItems :cartItems="cartItems" />
+        <CartItems @removeItem="removeItem" :cartItems="cartItems" />
+
+        <div class="cart__coupon">
+          <div class="cart__coupon__title">Coupon</div>
+          <div class="cart__coupon__input">
+            <AppInput placeholder="Enter coupon code..." />
+          </div>
+          <div class="cart__coupon__apply">
+            <AppButton>Apply Coupon</AppButton>
+          </div>
+        </div>
       </CartProduct>
 
-      <div class="cart__sidebar">
-        <div class="cart__sidebar__heading">Cart Totals</div>
-      </div>
+      <AppSidebar>
+        <div class="sidebar__body">
+          <div class="sidebar__body__heading">Cart Totals</div>
+          <BorderLine bgColor="#252525" width="100%" location="center" />
+          <div class="sidebar__body__subtotal">
+            <div class="sidebar__body__subtotal__title">Subtotal</div>
+            <div class="sidebar__body__subtotal__total">
+              <span>{{ subtotal }}</span>
+            </div>
+          </div>
+          <BorderLine bgColor="#dadada" width="100%" location="center" />
+          <Shipping>
+            <div class="shipping__title">Shipping</div>
+            <ShippingOption :shippingOptions="shippingOptions" />
+          </Shipping>
+
+          <BorderLine bgColor="#dadada" width="100%" location="center" />
+
+          <div class="sidebar__calc__shipping">
+            <AppButton
+              class="sidebar__accordion"
+              @click.native="isExpanded = !isExpanded"
+              ><span class="sidebar__accordion__title">Calculate Shipping</span>
+              <AppImage
+                :class="`sidebar__accordion__img ${
+                  isExpanded ? 'expanded' : ''
+                }`"
+                imgSrc="triangular-filled-up-arrow.svg"
+              />
+            </AppButton>
+            <VueAccordion :expanded="isExpanded">
+              <div class="cart__accordioin__content">
+                <h5>I don't know what to appear here...</h5>
+              </div>
+            </VueAccordion>
+          </div>
+
+          <BorderLine bgColor="#dadada" width="100%" location="center" />
+
+          <div class="sidebar__total">
+            <div class="sidebar__total__title">Total</div>
+            <div class="sidebar__total__price">{{ total }}</div>
+          </div>
+        </div>
+
+        <div class="sidebar__actions">
+          <AppButton class="sidebar__actions__update" @click.native="updateCart"
+            >Update Cart</AppButton
+          >
+          <AppButton class="sidebar__actions__checkout"
+            >Proceed to checkout</AppButton
+          >
+        </div>
+      </AppSidebar>
     </div>
   </div>
 </template>
 
 <script>
+import AppInput from "../components/AppInput.vue";
+import AppImage from "../components/AppImage.vue";
+import AppButton from "../components/AppButton.vue";
+
 import BorderLine from "../components/BorderLine.vue";
 import CartProduct from "../components/CartProduct.vue";
 import CartHeadingTitle from "../components/CartHeadingTitle.vue";
 import CartItems from "../components/CartItems.vue";
+import Shipping from "../components/Shipping.vue";
+import ShippingOption from "../components/ShippingOption.vue";
+import AppSidebar from "../components/AppSidebar.vue";
 
+import VueAccordion from "@ztrehagem/vue-accordion";
+import "@ztrehagem/vue-accordion/dist/vue-accordion.css";
 import "../assets/scss/pages/_cart.scss";
 
 export default {
   name: "Cart",
   components: {
+    AppInput,
+    AppImage,
+    AppButton,
     BorderLine,
     CartProduct,
     CartHeadingTitle,
     CartItems,
+    Shipping,
+    ShippingOption,
+    AppSidebar,
+    VueAccordion,
   },
   data() {
     return {
@@ -50,15 +127,64 @@ export default {
           productImage: "pexels-mídia-1454184.jpg",
           productName: "Eiusmod mauris torquen",
           productPrice: 89,
+          productQuantity: 1,
         },
         {
           productId: 2,
           productImage: "pexels-min-an-977380.jpg",
           productName: "Eiusmod mauris torquen",
           productPrice: 89,
+          productQuantity: 1,
         },
       ],
+      //0 = Free | null = none
+      shippingOptions: [
+        {
+          shippingId: 1,
+          shippingName: "Flat Rate",
+          shippingPrice: 100,
+        },
+        {
+          shippingId: 2,
+          shippingName: "Free Shipping",
+          shippingPrice: 100,
+        },
+        {
+          shippingId: 3,
+          shippingName: "International Delivery",
+          shippingPrice: 170,
+        },
+        {
+          shippingId: 4,
+          shippingName: "Local Deliver",
+          shippingPrice: 60,
+        },
+        {
+          shippingId: 5,
+          shippingName: "Local Pickup",
+          shippingPrice: 0,
+        },
+      ],
+      isExpanded: false,
+      subtotal: 0,
+      total: 0,
     };
+  },
+
+  created() {
+    console.log(this.cartItems.map((item) => item.productId));
+  },
+
+  methods: {
+    updateCart() {},
+
+    removeItem(id) {
+      var removeIndex = this.cartItems
+        .map((item) => item.productId)
+        .indexOf(id);
+
+      ~removeIndex && this.cartItems.splice(removeIndex, 1);
+    },
   },
 };
 </script>

@@ -1,0 +1,87 @@
+.checkout__hero {
+    position: relative;
+    background-image: url("../../img/pexels-anfisa-eremina-2543042-180.jpg");
+    background-size: cover;
+    background-position: center center;
+    height: 230px;
+    @extend %flex-column-center;
+    &__overlay {
+        height: 100%;
+        width: 100%;
+        background-color: #0000009a;
+        position: absolute;
+    }
+    &__title {
+        @include font-selection($PlayfairDisplay,
+        72px,
+        $regular,
+        $primaryColor);
+        text-align: center;
+        position: relative;
+        z-index: 99;
+    }
+    .border-wrapper {
+        width: 100%;
+        position: relative;
+        z-index: 99;
+    }
+}
+
+.checkout__body {
+    display: flex;
+    max-width: 1140px;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    padding: 65px 0 112px;
+}
+
+.checkout__informations {
+    position: relative;
+    width: 65.79%;
+    margin-right: 15px;
+    padding: 30px 0;
+}
+
+.checkout__other__wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkout__other {
+    display: flex;
+    margin-bottom: 20px;
+    &__img {
+        @include flex-center-all;
+        @include width-height(48px,
+        48px);
+        border: 1px solid #d7d7d7;
+        border-radius: 50%;
+        &__user {
+            width: 20px;
+            height: 20px;
+        }
+        &__gift {
+            width: 15px;
+            height: 15px;
+        }
+    }
+    &__details {
+        @include flex-center-all;
+        @include font-selection($Poppins,
+        14px,
+        $semi-bold);
+        padding-left: 18px;
+        &__title {
+            padding-right: 5px;
+        }
+        a {
+            @include font-selection($Poppins,
+            14px,
+            $semi-bold);
+            color: $linkColor;
+            letter-spacing: 0;
+            text-decoration: none;
+        }
+    }
+}

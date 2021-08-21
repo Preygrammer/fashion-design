@@ -17,3 +17,13 @@
     justify-content: center;
     align-items: center;
 }
+
+@mixin bold-uppercase {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+@mixin width-height($width: auto, $height: auto) {
+    width: $width;
+    height: $height;
+}
