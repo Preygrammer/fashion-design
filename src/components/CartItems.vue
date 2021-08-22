@@ -7,20 +7,24 @@
       class="cart__items"
     >
       <div class="cart__items__main">
-        <div class="cart__items__close" @click="removeItem(cart.productId)">
+        <div
+          v-if="showImage"
+          class="cart__items__close"
+          @click="removeItem(cart.productId)"
+        >
           ✕
         </div>
         <div class="cart__items__image">
-          <AppImage :imgSrc="cart.productImage" />
+          <AppImage v-if="showImage" :imgSrc="cart.productImage" />
           <div class="item__details">
             <div class="item__details__title">{{ cart.productName }}</div>
-            <div class="item__details__price">
+            <div v-if="showPrice" class="item__details__price">
               <span>$</span>{{ cart.productPrice }}
             </div>
           </div>
         </div>
       </div>
-      <div class="cart__items__incrementor">
+      <div v-if="showQuantity" class="cart__items__incrementor">
         <div class="incrementor">
           <AppButton
             @click.native="
@@ -63,6 +67,18 @@ export default {
   },
   props: {
     cartItems: Array,
+    showQuantity: {
+      type: Boolean,
+      default: true,
+    },
+    showImage: {
+      type: Boolean,
+      default: true,
+    },
+    showPrice: {
+      type: Boolean,
+      default: true,
+    },
   },
   data() {
     return {};
