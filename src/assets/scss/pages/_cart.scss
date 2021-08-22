@@ -38,7 +38,7 @@
 
 .cart__product {
     position: relative;
-    width: 65.79%;
+    width: 67%;
     margin-right: 15px;
     padding: 30px 0;
     &__heading {
@@ -79,6 +79,9 @@
     }
     &__close {
         @include flex-align-center;
+        &:hover {
+            cursor: pointer;
+        }
     }
     &__image {
         @include flex-align-center;
@@ -88,6 +91,9 @@
         width: 98px;
         height: 112px;
         object-fit: cover;
+    }
+    &:nth-child(even) {
+        border-top: 1px solid #e7e7e7;
     }
 }
 
@@ -109,22 +115,208 @@
     text-align: center;
     button {
         width: auto;
+        height: 20px;
         &:nth-child(3) {
             transform: rotate(180deg);
         }
     }
     &__value {
         width: auto;
+        margin-left: -2px;
     }
     img {
-        height: 10px;
+        height: 9px;
         width: 10px;
     }
 }
 
-.cart__sidebar {
-    width: 35.21%;
-    background-color: #f0f0f0;
+.sidebar {
+    width: 33%;
     margin-left: 15px;
+}
+
+.sidebar__body {
+    position: relative;
+    width: 100%;
+    background-color: #f0f0f0;
     padding: 25px;
+    @include font-selection($Oswald,
+    12px);
+    &__heading {
+        @include bold-uppercase;
+        padding-top: 5px;
+    }
+    &__subtotal {
+        display: flex;
+        padding-top: 32px;
+        &__title {
+            width: 100%;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        &__total {
+            width: 100%;
+            @include font-selection($Poppins,
+            14px,
+            600,
+            $black);
+            text-align: right;
+        }
+    }
+}
+
+.shipping {
+    display: flex;
+    padding: 30px 0 15px;
+    &__title {
+        text-transform: uppercase;
+        width: 30%;
+        letter-spacing: 2px;
+    }
+    &__option {
+        @include font-selection($Poppins,
+        13px,
+        $regular,
+        #858585);
+        @include flex-align-center;
+        padding-bottom: 12px;
+        label {
+            margin-left: 9px;
+        }
+    }
+}
+
+.sidebar__calc__shipping {
+    padding: 20px 0 10px;
+}
+
+.sidebar__accordion {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: none;
+    color: #000000;
+    @include font-selection($Oswald,
+    12px);
+    &:hover {
+        background: none;
+        color: #000000;
+    }
+    &__title {
+        width: 50%;
+        text-align: left;
+    }
+    &__img {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        right: 0;
+        transform: rotate(180deg);
+        transition: all .3s;
+    }
+}
+
+.expanded {
+    transform: rotate(0);
+}
+
+.sidebar__total {
+    display: flex;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-top: 28px;
+    &__title {
+        width: 50%;
+    }
+    &__price {
+        @include font-selection($Poppins,
+        20px);
+        width: 50%;
+        text-align: right;
+    }
+}
+
+.sidebar__actions {
+    @include font-selection($Oswald,
+    12px,
+    $bold);
+    width: 100%;
+    &__update {
+        width: 100%;
+        height: 75px;
+        border: none;
+        background: $primaryBgColor;
+        letter-spacing: 3px;
+        &:hover {
+            background: $primaryBgColor;
+            color: $primaryColor;
+        }
+    }
+    &__checkout {
+        width: 100%;
+        height: 75px;
+        border: none;
+        background: $black;
+        letter-spacing: 3px;
+        &:hover {
+            background: $black;
+            color: $primaryColor;
+        }
+    }
+}
+
+.cart__coupon {
+    display: flex;
+    height: 60px;
+    margin-top: 40px;
+    &__title {
+        @include font-selection($Oswald,
+        12px,
+        $bold);
+        @include flex-center-all;
+        border: 1px solid #dcdcdc;
+        border-right: none;
+        height: 100%;
+        width: 15%;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    &__input {
+        width: 60%;
+        input {
+            @include font-selection($Poppins,
+            14px,
+            $regular);
+            width: 100%;
+            height: 100%;
+            padding: 0 25px;
+            border: 1px solid #dcdcdc;
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+    &__apply {
+        width: 25%;
+        height: 100%;
+        button {
+            @include flex-center-all;
+            @include font-selection($Oswald,
+            12px,
+            $bold);
+            width: 100%;
+            height: 100%;
+            border: 1px solid #dcdcdc;
+            border-left: none;
+            background: $primaryBgColor;
+            color: $primaryColor;
+            &:hover {
+                background: $primaryBgColor;
+                color: $primaryColor;
+            }
+        }
+    }
 }
