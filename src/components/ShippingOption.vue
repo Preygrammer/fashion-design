@@ -27,7 +27,7 @@ export default {
   },
   props: {
     shippingOptions: {
-      type: Array,
+      type: [Array, Object],
       required: true,
     },
   },
