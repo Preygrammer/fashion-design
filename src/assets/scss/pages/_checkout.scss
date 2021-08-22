@@ -41,6 +41,9 @@
     width: 65.79%;
     margin-right: 15px;
     padding: 30px 0;
+    .border-wrapper {
+        margin-bottom: 38px;
+    }
 }
 
 .checkout__other__wrapper {
@@ -82,6 +85,396 @@
             color: $linkColor;
             letter-spacing: 0;
             text-decoration: none;
+        }
+    }
+}
+
+.billing__heading__title {
+    @include font-selection($Oswald,
+    14px,
+    $bold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 30px;
+}
+
+.billing__form {
+    &__fields {
+        width: 100%;
+    }
+    &__half {
+        width: 50%;
+        display: inline-block;
+        margin-bottom: 28px;
+    }
+    &__full {
+        margin-bottom: 28px;
+    }
+    &__field {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        @include font-selection($Oswald,
+        12px);
+        text-transform: uppercase;
+        label {
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+    }
+    &__input {
+        border: 1px solid #e5e5e5;
+        padding: 10px 15px;
+        font-family: $Poppins;
+    }
+    &__select {
+        border: 1px solid #e5e5e5;
+        padding: 10px;
+        font-family: $Poppins;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        &__arrow {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            right: 10px;
+            bottom: 17px;
+            transform: rotate(180deg);
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}
+
+.p-left {
+    padding-left: 15px;
+}
+
+.p-right {
+    padding-right: 15px;
+}
+
+.create-an-account {
+    label {
+        margin-left: 10px;
+        @include font-selection($Poppins,
+        14px,
+        $semi-bold);
+    }
+}
+
+.shipping__heading__title {
+    @include font-selection($Oswald,
+    14px,
+    $bold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 70px;
+}
+
+.ship-address-check {
+    label {
+        margin-left: 10px;
+        @include font-selection($Poppins,
+        14px);
+    }
+}
+
+.order__notes {
+    display: flex;
+    flex-direction: column;
+    label {
+        @include font-selection($Oswald,
+        12px);
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin: 40px 0 15px;
+    }
+    &__textarea {
+        @include font-selection($Poppins,
+        12px);
+        width: 100%;
+        padding: 15px;
+        border: 1px solid #e5e5e5;
+        border-radius: 0;
+    }
+}
+
+.sidebar {
+    width: 33%;
+    margin-top: 55px;
+    margin-left: 15px;
+}
+
+.sidebar__body {
+    padding: 25px;
+    background-color: #f0f0f0;
+    &__heading {
+        @include font-selection($Oswald,
+        14px,
+        $bold);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    .border-wrapper:not(.border__excluded) {
+        .categories__border__line {
+            height: 1px;
+        }
+    }
+}
+
+.sidebar__products {
+    @include font-selection($Oswald,
+    12px);
+    display: flex;
+    padding: 25px 0 15px;
+    &__subtotal {
+        width: 100%;
+        font-size: 12px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+    &__value {
+        width: 100%;
+        @include font-selection($Poppins,
+        14px,
+        600,
+        $black);
+        text-align: right;
+    }
+}
+
+.cart__product {
+    position: relative;
+    width: 100%;
+    margin-right: 15px;
+    padding: 30px 0 5px;
+    &__heading {
+        display: flex;
+        @include font-selection($Oswald,
+        12px,
+        $bold);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    &__heading__title {
+        &:nth-child(1) {
+            width: 50%;
+        }
+        &:nth-child(2) {
+            width: 50%;
+            text-align: right;
+        }
+    }
+    .border-wrapper {
+        width: 100%;
+        margin-bottom: 28px;
+    }
+}
+
+.cart__items {
+    display: flex;
+    @include font-selection($Poppins,
+    14px,
+    $regular);
+    &__main {
+        display: flex;
+        width: 75%;
+    }
+    &__close {
+        @include flex-align-center;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    &__image {
+        @include flex-align-center;
+    }
+    &__image img {
+        width: 98px;
+        height: 112px;
+        object-fit: cover;
+    }
+    &:nth-child(even) {
+        border-top: 1px solid #e7e7e7;
+    }
+}
+
+.item__details__title {
+    font-weight: $semi-bold;
+}
+
+.item__total {
+    @include flex-center-end;
+    width: 25%;
+}
+
+.quantity {
+    @include font-selection($Oswald,
+    12px,
+    $light,
+    #8b8b8b);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 40px;
+}
+
+.shipping {
+    display: flex;
+    padding: 30px 0 15px;
+    &__title {
+        @include font-selection($Oswald,
+        12px,
+        $light);
+        text-transform: uppercase;
+        width: 30%;
+        letter-spacing: 2px;
+    }
+    &__option {
+        @include font-selection($Poppins,
+        13px,
+        $regular,
+        #858585);
+        @include flex-align-center;
+        padding-bottom: 12px;
+        label {
+            margin-left: 9px;
+        }
+    }
+}
+
+.sidebar__calc__shipping {
+    padding: 20px 0 10px;
+}
+
+.sidebar__accordion {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: none;
+    color: #000000;
+    @include font-selection($Oswald,
+    12px);
+    &:hover {
+        background: none;
+        color: #000000;
+    }
+    &__title {
+        width: 50%;
+        text-align: left;
+    }
+    &__img {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        right: 0;
+        transform: rotate(180deg);
+        transition: all .3s;
+    }
+}
+
+.expanded {
+    transform: rotate(0);
+}
+
+.sidebar__total {
+    display: flex;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 28px 0 15px;
+    &__title {
+        @include font-selection($Oswald,
+        12px);
+        width: 50%;
+    }
+    &__price {
+        @include font-selection($Poppins,
+        20px);
+        width: 50%;
+        text-align: right;
+    }
+}
+
+.payment__method {
+    font-family: $Poppins;
+    &__option {
+        display: flex;
+        padding: 20px 0 26px;
+        border-top: 1px solid #dadada;
+        input[name="payment-method"] {
+            margin-top: 7px;
+        }
+        img {
+            margin-left: 16px;
+        }
+        &:nth-child(3) {
+            padding-bottom: 15px;
+            .payment__method__details {
+                display: flex;
+            }
+        }
+    }
+    &__title {
+        font-size: 18px;
+        font-weight: $semi-bold;
+    }
+    &__details {
+        margin-left: 12px;
+    }
+    &__description {
+        margin-top: 8px;
+        font-size: 12px;
+        color: #9b9b9b;
+    }
+}
+
+.what-is-paypal {
+    padding-left: 25px;
+    a {
+        @include font-selection($Poppins,
+        12px);
+        color: $linkColor;
+        letter-spacing: 0;
+        text-decoration: none;
+    }
+}
+
+.terms-and-conditions {
+    @include flex-align-center;
+    @include font-selection($Poppins,
+    12px);
+    margin: 38px 0 25px;
+    &__text {
+        margin-left: 12px;
+        a {
+            @include font-selection($Poppins,
+            12px,
+            $semi-bold);
+            color: $linkColor;
+            letter-spacing: 0;
+            text-decoration: none;
+        }
+    }
+}
+
+.place__order {
+    @include flex-center-all;
+    button {
+        @include font-selection($Oswald,
+        12px,
+        $bold,
+        $primaryColor);
+        background: $primaryBgColor;
+        height: 75px;
+        width: 100%;
+        line-height: 18px;
+        &:hover {
+            background: $primaryBgColor;
+            color: $primaryColor;
         }
     }
 }
