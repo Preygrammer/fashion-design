@@ -18,6 +18,12 @@
     align-items: center;
 }
 
+@mixin flex-center-end {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
 @mixin bold-uppercase {
     text-transform: uppercase;
     font-weight: bold;
