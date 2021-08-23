@@ -1,6 +1,8 @@
 # Fashion Design
 ## _eCommerce Clothing Shop_
 
+### This is not an updated readme file
+
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://github.com/Preygrammer/fashion-design.git)
 
 Fashion Design is all about giving you the fashion you need to feel glam and fab. As a brand that is all about fashion, we want to help you find your individuality through style. We want you to own yourself, simply by being you and enjoying fashion.
@@ -20,7 +22,7 @@ Fashion Design uses a number of open source projects to work properly:
 
 - [VueJS] - HTML enhanced for web apps!
 - [node.js] - evented I/O for the backend
-- [Express] - fast node.js network app framework [@tjholowaychuk]
+- [Axios] - fast node.js network app framework [@tjholowaychuk]
 - [jQuery] - duh!
 - and many more.
 
@@ -66,6 +68,6 @@ MIT
 
    [node.js]: <http://nodejs.org>
    [jQuery]: <http://jquery.com>
-   [express]: <http://expressjs.com>
+   [Axios]: <https://github.com/axios/axios>
    [VueJS]: <https://vuejs.org/>
 
