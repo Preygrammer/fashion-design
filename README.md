@@ -19,7 +19,6 @@ Fashion Design is all about giving you the fashion you need to feel glam and fab
 Fashion Design uses a number of open source projects to work properly:
 
 - [VueJS] - HTML enhanced for web apps!
-- [Vue Bootstrap] - Great UI boilerplate for modern web apps
 - [node.js] - evented I/O for the backend
 - [Express] - fast node.js network app framework [@tjholowaychuk]
 - [jQuery] - duh!
@@ -41,6 +40,8 @@ Fashion Design requires [Node.js](https://nodejs.org/) to run.
    ```
    npm run serve
    ```
+
+# OR
 
 ### Compiles and minifies for production
 ```
@@ -64,7 +65,6 @@ MIT
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
    [node.js]: <http://nodejs.org>
-   [Vue Bootstrap]: <https://bootstrap-vue.org//>
    [jQuery]: <http://jquery.com>
    [express]: <http://expressjs.com>
    [VueJS]: <https://vuejs.org/>
