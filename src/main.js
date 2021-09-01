@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import { IconsPlugin } from 'bootstrap-vue'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import Functions from './functions.js'
 import {
@@ -45,7 +45,6 @@ library.add(faUserAlt,
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
-Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 Vue.use(Functions)
 
@@ -63,3 +62,19 @@ new Vue({
 // new Vue({
 //     render: h => h(App),
 // }).$mount('#app')
+// const RootComponent = {
+//     FontAwesomeIcon,
+//     App
+// }
+
+// createApp({
+//     el: "#app",
+//     components: { App, Functions, FontAwesomeIcon },
+//     router,
+//     render: h => h(App)
+// });
+
+// const app = createApp(App);
+// app.component('font-awesome-icon', FontAwesomeIcon);
+// app.use(router).use(Functions);
+// app.mount("#app");
