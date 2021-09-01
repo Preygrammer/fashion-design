@@ -28,7 +28,10 @@
         <div class="incrementor">
           <AppButton
             @click.native="
-              productItemTotal(cart.productQuantity, cart.productPrice)
+              cart.productQuantity = $functions.increment(
+                cart.productQuantity,
+                1
+              )
             "
           >
             <AppImage imgSrc="triangular-filled-up-arrow.svg" />
@@ -93,10 +96,9 @@ export default {
     //   price = price * 2;
     // },
   },
+
   // @click.native="
-  //             cart.productQuantity = $functions.increment(
-  //               cart.productQuantity,
-  //               1
-  //             )
+  //             productItemTotal(cart.productQuantity, cart.productPrice)
+  //           "
 };
 </script>
