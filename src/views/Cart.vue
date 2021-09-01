@@ -3,8 +3,8 @@
     <div class="cart__hero">
       <div class="cart__hero__overlay"></div>
       <div class="cart__hero__title">Shopping Cart</div>
-      <BorderLine bgColor="#ffffff" width="10%" location="center" />
-      <BorderLine bgColor="#ffffff" width="5%" location="center" />
+      <AppBorderLine bgColor="#ffffff" width="10%" location="center" />
+      <AppBorderLine bgColor="#ffffff" width="5%" location="center" />
     </div>
 
     <div class="cart__body">
@@ -14,7 +14,7 @@
           <CartHeadingTitle>Qty</CartHeadingTitle>
           <CartHeadingTitle>Total</CartHeadingTitle>
         </div>
-        <BorderLine bgColor="#252525" width="100%" location="center" />
+        <AppBorderLine bgColor="#252525" width="100%" location="center" />
 
         <CartItems @removeItem="removeItem" :cartItems="cartItems" />
 
@@ -32,20 +32,20 @@
       <AppSidebar>
         <div class="sidebar__body">
           <div class="sidebar__body__heading">Cart Totals</div>
-          <BorderLine bgColor="#252525" width="100%" location="center" />
+          <AppBorderLine bgColor="#252525" width="100%" location="center" />
           <div class="sidebar__body__subtotal">
             <div class="sidebar__body__subtotal__title">Subtotal</div>
             <div class="sidebar__body__subtotal__total">
               <span>{{ subtotal }}</span>
             </div>
           </div>
-          <BorderLine bgColor="#dadada" width="100%" location="center" />
+          <AppBorderLine bgColor="#dadada" width="100%" location="center" />
           <Shipping>
             <div class="shipping__title">Shipping</div>
             <ShippingOption :shippingOptions="shippingOptions" />
           </Shipping>
 
-          <BorderLine bgColor="#dadada" width="100%" location="center" />
+          <AppBorderLine bgColor="#dadada" width="100%" location="center" />
 
           <div class="sidebar__calc__shipping">
             <AppButton
@@ -66,7 +66,7 @@
             </VueAccordion>
           </div>
 
-          <BorderLine bgColor="#dadada" width="100%" location="center" />
+          <AppBorderLine bgColor="#dadada" width="100%" location="center" />
 
           <div class="sidebar__total">
             <div class="sidebar__total__title">Total</div>
@@ -92,7 +92,7 @@ import AppInput from "../components/AppInput.vue";
 import AppImage from "../components/AppImage.vue";
 import AppButton from "../components/AppButton.vue";
 
-import BorderLine from "../components/BorderLine.vue";
+import AppBorderLine from "../components/AppBorderLine.vue";
 import CartProduct from "../components/CartProduct.vue";
 import CartHeadingTitle from "../components/CartHeadingTitle.vue";
 import CartItems from "../components/CartItems.vue";
@@ -110,7 +110,7 @@ export default {
     AppInput,
     AppImage,
     AppButton,
-    BorderLine,
+    AppBorderLine,
     CartProduct,
     CartHeadingTitle,
     CartItems,
