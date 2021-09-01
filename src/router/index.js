@@ -16,7 +16,7 @@ const routes = [{
         // this generates a separate chunk (about.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
         component: () =>
-            import ( /* webpackChunkName: "about" */ '../views/SingleProduct.vue')
+            import ( /* webpackChunkName: "SingleProduct" */ '../views/SingleProduct.vue')
     },
     {
         path: '/cart',
@@ -25,7 +25,7 @@ const routes = [{
         // this generates a separate chunk (about.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
         component: () =>
-            import ( /* webpackChunkName: "about" */ '../views/Cart.vue')
+            import ( /* webpackChunkName: "Cart" */ '../views/Cart.vue')
     },
     {
         path: '/checkout',
@@ -34,7 +34,16 @@ const routes = [{
         // this generates a separate chunk (about.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
         component: () =>
-            import ( /* webpackChunkName: "about" */ '../views/Checkout.vue')
+            import ( /* webpackChunkName: "Checkout" */ '../views/Checkout.vue')
+    },
+    {
+        path: '/my-account',
+        name: 'MyAccount',
+        // route level code-splitting
+        // this generates a separate chunk (about.[hash].js) for this route
+        // which is lazy-loaded when the route is visited.
+        component: () =>
+            import ( /* webpackChunkName: "MyAccount" */ '../views/MyAccount.vue')
     }
 ]
 
