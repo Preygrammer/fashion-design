@@ -24,6 +24,16 @@
     align-items: center;
 }
 
+@mixin flex-direction-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flex-direction-row {
+    display: flex;
+    flex-direction: row;
+}
+
 @mixin bold-uppercase {
     text-transform: uppercase;
     font-weight: bold;
