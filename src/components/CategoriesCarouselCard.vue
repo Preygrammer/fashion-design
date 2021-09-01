@@ -6,17 +6,17 @@
       <div class="categories__title">{{ title }}</div>
       <div class="categories__description">{{ description }}</div>
       <div class="categories__border__slash"></div>
-      <BorderLine bgColor="#ffffff" width="15%" location="center" />
+      <AppBorderLine bgColor="#ffffff" width="15%" location="center" />
     </div>
   </div>
 </template>
 
 <script>
-import BorderLine from "@/components/BorderLine.vue";
+import AppBorderLine from "@/components/AppBorderLine.vue";
 
 export default {
   name: "CategoriesCarouselCard",
-  components: { BorderLine },
+  components: { AppBorderLine },
   props: {
     source: String,
     width: String,
