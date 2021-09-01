@@ -1,0 +1,258 @@
+.account__hero {
+    position: relative;
+    background-image: url("../../img/pexels-anfisa-eremina-2543042-180.jpg");
+    background-size: cover;
+    background-position: center center;
+    height: 230px;
+    @extend %flex-column-center;
+    &__overlay {
+        background-color: #000000c5;
+    }
+    &__title {
+        @include font-selection($PlayfairDisplay,
+        72px,
+        $regular,
+        $primaryColor);
+        text-align: center;
+        position: relative;
+        z-index: 99;
+    }
+    .border-wrapper {
+        width: 100%;
+        position: relative;
+        z-index: 99;
+    }
+}
+
+.account__body {
+    display: flex;
+    max-width: 1140px;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    padding: 100px 0 112px;
+    &__form {
+        width: 100%;
+        display: flex;
+    }
+}
+
+.account__input {
+    @include font-selection($Poppins,
+    14px,
+    $light);
+    padding: 10px 15px;
+    border: 1px solid #eaeaea;
+    width: 100%;
+}
+
+.personal__information {
+    width: 50.5%;
+    margin-right: 15px;
+}
+
+.billing__information {
+    width: 49.5%;
+    margin-left: 15px;
+}
+
+.edit__billing {
+    &__input-half {
+        &:nth-child(1) {
+            margin-right: 15px;
+        }
+        &:nth-child(2) {
+            margin-left: 15px;
+        }
+    }
+}
+
+.details__group__row {
+    display: flex;
+    .details__group__column {
+        &:nth-child(1) {
+            width: 50%;
+        }
+        &:nth-child(2) {
+            width: 50%;
+        }
+    }
+}
+
+.details__group__column {
+    @include flex-direction-column;
+    margin-bottom: 20px;
+    label {
+        @include font-selection($Oswald,
+        12px);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 5px;
+    }
+}
+
+.details__title {
+    @include font-selection($Oswald,
+    14px,
+    $regular);
+    text-transform: uppercase;
+}
+
+.account__details__title {
+    margin-top: 40px;
+}
+
+.border-wrapper {
+    margin-bottom: 25px;
+}
+
+.account__actions {
+    @include flex-center-end;
+    margin-top: 20px;
+    &__btn {
+        @include font-selection($Oswald,
+        12px,
+        $bold,
+        $primaryColor);
+        height: 60px;
+        width: 100%;
+        border: none;
+        line-height: 18px;
+        letter-spacing: 3px;
+        &:hover {
+            color: $primaryColor;
+        }
+    }
+    &__cancel {
+        width: 35%;
+        margin-right: 8px;
+        button {
+            background: $black;
+            &:hover {
+                background: $black;
+            }
+        }
+    }
+    &__save {
+        width: 35%;
+        margin-left: 8px;
+        button {
+            background: $primaryBgColor;
+            &:hover {
+                background: $primaryBgColor;
+            }
+        }
+    }
+}
+
+// Media Queries
+@media only screen and (max-width: 575px) {
+    .account__hero {
+        height: 130px;
+        &__title {
+            font-size: 46px;
+        }
+        &__border-top {
+            margin-bottom: 0 !important;
+            .categories__border__line {
+                width: 30% !important;
+                background-color: #d3d3d3 !important;
+            }
+        }
+        &__border-bot {
+            margin-bottom: 10px;
+            .categories__border__line {
+                margin: 5px auto !important;
+                width: 20% !important;
+                background-color: #d3d3d3 !important;
+            }
+        }
+    }
+    .account__body {
+        max-width: 100%;
+        padding: 25px 25px;
+        &__form {
+            width: 100%;
+            display: block;
+        }
+    }
+    .personal__information {
+        width: 100%;
+    }
+    .billing__information {
+        width: 100%;
+        margin: 0;
+    }
+    .account__actions {
+        &__cancel {
+            width: 100%;
+        }
+        &__save {
+            width: 100%;
+        }
+    }
+}
+
+
+/* Extra Small Devices, Phones */
+
+@media only screen and (min-width: 576px) {
+    .account__body {
+        max-width: 540px;
+        &__form {
+            width: 100%;
+            display: flex;
+        }
+    }
+    .account__actions {
+        margin-top: 20px;
+        &__btn {
+            @include font-selection($Oswald,
+            12px,
+            $bold,
+            $primaryColor);
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .account__actions {
+        &__cancel {
+            width: 50%;
+        }
+        &__save {
+            width: 50%;
+        }
+    }
+}
+
+
+/* Small Devices, Tablets */
+
+@media only screen and (min-width: 768px) {
+    .account__body {
+        max-width: map-get($container-max-widths, "md");
+        &__form {
+            width: 100%;
+            display: flex;
+        }
+    }
+}
+
+
+/* Medium Devices, Desktops */
+
+@media only screen and (min-width: 992px) {
+    .account__body {
+        max-width: 960px;
+        &__form {
+            width: 100%;
+            display: flex;
+        }
+    }
+}
+
+
+/* Large Devices, Wide Screens */
+
+@media only screen and (min-width: 1200px) {}
