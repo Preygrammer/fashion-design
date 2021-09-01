@@ -46,3 +46,57 @@
         padding-left: 70px;
     }
 }
+
+// Media Queries
+@media only screen and (max-width: 575px) {}
+
+
+/* Extra Small Devices, Phones */
+
+@media only screen and (min-width: 576px) {}
+
+
+/* Small Devices, Tablets */
+
+@media only screen and (max-width: 768px) {
+    .footer__navigation {
+        ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0;
+        }
+        ul li a {
+            color: #ffffff;
+            font-family: "Oswald";
+            font-size: 12px;
+            font-weight: 100;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-decoration: none;
+            padding: 0 10px;
+        }
+        .fs__social__list {
+            display: flex;
+        }
+    }
+    .footer__social .fs__social__list {
+        display: flex;
+    }
+    .footer__social .fs__social__list img:nth-child(4) {
+        padding-left: 20px;
+    }
+}
+
+@media only screen and (min-width: 768px) {}
+
+
+/* Medium Devices, Desktops */
+
+@media only screen and (min-width: 992px) {}
+
+
+/* Large Devices, Wide Screens */
+
+@media only screen and (min-width: 1200px) {}
