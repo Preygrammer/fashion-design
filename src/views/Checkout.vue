@@ -3,8 +3,8 @@
     <div class="checkout__hero">
       <div class="checkout__hero__overlay"></div>
       <div class="checkout__hero__title">Checkout</div>
-      <BorderLine bgColor="#ffffff" width="10%" location="center" />
-      <BorderLine bgColor="#ffffff" width="5%" location="center" />
+      <AppBorderLine bgColor="#ffffff" width="10%" location="center" />
+      <AppBorderLine bgColor="#ffffff" width="5%" location="center" />
     </div>
 
     <div class="checkout__body">
@@ -39,9 +39,9 @@
         <div class="billing__heading">
           <div class="billing__heading__title">Billing Address</div>
         </div>
-        <BorderLine bgColor="#252525" width="100%" location="center" />
+        <AppBorderLine bgColor="#252525" width="100%" location="center" />
 
-        <Form class="billing__form">
+        <AppForm class="billing__form">
           <div class="billing__form__fields">
             <div class="billing__form__half">
               <div class="billing__form__field p-right">
@@ -135,12 +135,12 @@
             <AppInput type="checkbox" />
             <label for="">Create an account?</label>
           </div>
-        </Form>
+        </AppForm>
 
         <div class="shipping__heading">
           <div class="shipping__heading__title">Shipping Address</div>
         </div>
-        <BorderLine bgColor="#252525" width="100%" location="center" />
+        <AppBorderLine bgColor="#252525" width="100%" location="center" />
 
         <div class="ship-address-check">
           <AppInput type="checkbox" />
@@ -160,7 +160,7 @@
       <AppSidebar>
         <div class="sidebar__body">
           <div class="sidebar__body__heading">Your Order</div>
-          <BorderLine
+          <AppBorderLine
             class="border__excluded"
             bgColor="#252525"
             width="100%"
@@ -172,7 +172,7 @@
               <CartHeadingTitle>Product</CartHeadingTitle>
               <CartHeadingTitle>Total</CartHeadingTitle>
             </div>
-            <BorderLine bgColor="#dbdbdb" width="100%" location="center" />
+            <AppBorderLine bgColor="#dbdbdb" width="100%" location="center" />
 
             <CartItems
               :showImage="false"
@@ -186,7 +186,7 @@
             Qty : <span>{{ itemsQuantity }}</span>
           </div>
 
-          <BorderLine bgColor="#dbdbdb" width="100%" location="center" />
+          <AppBorderLine bgColor="#dbdbdb" width="100%" location="center" />
 
           <div class="sidebar__products">
             <div class="sidebar__products__subtotal">Subtotal</div>
@@ -195,14 +195,14 @@
             </div>
           </div>
 
-          <BorderLine bgColor="#dbdbdb" width="100%" location="center" />
+          <AppBorderLine bgColor="#dbdbdb" width="100%" location="center" />
 
           <Shipping>
             <div class="shipping__title">Shipping</div>
             <ShippingOption :shippingOptions="shippingOptions" />
           </Shipping>
 
-          <BorderLine bgColor="#dbdbdb" width="100%" location="center" />
+          <AppBorderLine bgColor="#dbdbdb" width="100%" location="center" />
 
           <div class="sidebar__calc__shipping">
             <AppButton
@@ -223,7 +223,7 @@
             </VueAccordion>
           </div>
 
-          <BorderLine bgColor="#dadada" width="100%" location="center" />
+          <AppBorderLine bgColor="#dadada" width="100%" location="center" />
 
           <div class="sidebar__total">
             <div class="sidebar__total__title">Total</div>
@@ -286,11 +286,11 @@ import AppLink from "../components/AppLink.vue";
 import AppSelect from "../components/AppSelect.vue";
 import AppSidebar from "../components/AppSidebar.vue";
 import AppTextarea from "../components/AppTextarea.vue";
-import BorderLine from "../components/BorderLine.vue";
+import AppBorderLine from "../components/AppBorderLine.vue";
 import CartHeadingTitle from "../components/CartHeadingTitle.vue";
 import CartItems from "../components/CartItems.vue";
 import CartProduct from "../components/CartProduct.vue";
-import Form from "../components/Form.vue";
+import AppForm from "../components/AppForm.vue";
 import Shipping from "../components/Shipping.vue";
 import ShippingOption from "../components/ShippingOption.vue";
 
@@ -309,11 +309,11 @@ export default {
     AppSelect,
     AppSidebar,
     AppTextarea,
-    BorderLine,
+    AppBorderLine,
     CartItems,
     CartHeadingTitle,
     CartProduct,
-    Form,
+    AppForm,
     Shipping,
     ShippingOption,
     VueAccordion,
@@ -321,6 +321,7 @@ export default {
   props: {},
   data() {
     return {
+      //API temp data
       // I assume that products will be calculated from the backend
       // like the quantity counting
       cartItems: [
