@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex gap__5">
+  <div class="rating-star d-flex gap__5">
     <div class="star" v-for="rate in 5 - rating + rating" :key="rate">
       <img
         :src="
