@@ -19,7 +19,7 @@
 
 .categories__text {
     position: relative;
-    top: -140px;
+    margin-top: -140px;
     height: 140px;
     text-align: center;
     color: #ffffff;
@@ -100,6 +100,7 @@
     font-size: 12px;
     font-weight: 100;
     letter-spacing: 2px;
+    margin-bottom: 15px;
 }
 
 .banner__promo__card img {
@@ -153,6 +154,7 @@
 .most__wanted__products {
     display: flex;
     overflow: hidden;
+    margin-left: -15px;
     .fpc__image {
         height: 100%;
     }
@@ -179,9 +181,13 @@
     }
 }
 
+.the__product__card {
+    padding: 0 15px;
+}
+
 .mwp__arrows {
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 0;
     display: flex;
     width: 100%;
@@ -204,18 +210,13 @@
 
 .tab__product__container {
     display: flex;
-    min-height: 857px;
 }
 
 .tab__product__content {
     flex: 1;
     position: relative;
-    &:nth-child(3) .tab__product__title {
-        border-right: none;
-    }
-    &:nth-child(3) .tab__product__body {
-        border-right: none;
-    }
+    &:nth-child(3) .tab__product__title,
+    &:nth-child(3) .tab__product__body,
     &:nth-child(3) .tab__product__more {
         border-right: none;
     }
@@ -266,6 +267,9 @@
     height: 100%;
     width: auto;
     left: 14px;
+    .rating-star {
+        margin: 10px 2px 40px;
+    }
 }
 
 .tp__actions__btn .btn-standard {
@@ -279,7 +283,6 @@
 }
 
 .tab__product__more {
-    position: absolute;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -289,7 +292,7 @@
 }
 
 .tab__product__more button {
-    margin-bottom: 20px;
+    margin: 20px 0;
     &:hover {
         color: #ffffff !important;
         background-color: #000000 !important;
@@ -297,10 +300,6 @@
     }
 }
 
-// .tab__product__more>.btn-standard:hover {
-//     color: #ffffff !important;
-//     background-color: #000000;
-// }
 
 /* From Our Blog */
 
@@ -412,7 +411,119 @@
     form {
         display: flex;
         flex-direction: column;
-        text-align: center;
         align-items: center;
+        text-align: center;
     }
 }
+
+.the__product__card img {
+    width: 568px;
+    height: 622px;
+    object-fit: cover;
+}
+
+// Media Queries
+@media only screen and (max-width: 575px) {
+    .categories__carousel__cards {
+        width: 100%;
+        flex: auto;
+        flex-shrink: 0;
+    }
+    .featured__products {
+        height: 100%;
+        .categories__border__line {
+            width: 20% !important;
+        }
+    }
+    .fpc__container {
+        @include flex-direction-column;
+        padding: 20px 25px;
+        .fpc__image {
+            height: auto;
+            width: 100%;
+            padding: 0;
+            margin-bottom: 40px;
+            flex: 1;
+        }
+        .fpc__sale-tag {
+            right: 13px;
+        }
+    }
+    // Promo banner
+    .banner__promo__card {
+        width: 100%;
+    }
+    .banner__promo__details {
+        left: 25px;
+    }
+    .banner__promo__details h2 {
+        font-size: 30px;
+    }
+    //most wanted
+    .countdown__product__container {
+        padding: 40px 25px;
+    }
+    .countdown__timer__content {
+        margin: 30px 0;
+        gap: 10px;
+    }
+    .ct__number {
+        font-size: 30px;
+    }
+    .ct__text {
+        font-size: 10px;
+    }
+}
+
+
+/* Extra Small Devices, Phones */
+
+@media only screen and (min-width: 576px) {}
+
+@media only screen and (max-width: 768px) {
+    .tab__product__container {
+        flex-direction: column;
+    }
+    .tab__product__body {
+        padding: 10px 25px;
+        border-right: 1px solid #e0e0e0;
+        .fpc__image {
+            height: 100%;
+            padding: 32px 0;
+            display: flex;
+            flex: 0;
+            position: relative;
+        }
+        .fpc__image img {
+            object-fit: cover;
+        }
+        .fpc__details {
+            position: absolute;
+            right: -235px;
+            top: 25px;
+        }
+        .fpc__details_title {
+            font-size: 18px;
+            margin-top: 0;
+        }
+        .fpc__details_price {
+            font-size: 18px;
+            text-align: left;
+        }
+    }
+}
+
+
+/* Small Devices, Tablets */
+
+@media only screen and (min-width: 768px) {}
+
+
+/* Medium Devices, Desktops */
+
+@media only screen and (min-width: 992px) {}
+
+
+/* Large Devices, Wide Screens */
+
+@media only screen and (min-width: 1200px) {}
