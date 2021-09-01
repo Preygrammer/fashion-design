@@ -38,7 +38,7 @@
               </li>
             </ul>
           </div>
-          <BorderLine bgColor="#eaeaea" width="98%" location="center" />
+          <AppBorderLine bgColor="#eaeaea" width="98%" location="center" />
 
           <div class="sp__arrows">
             <AppButton>
@@ -64,7 +64,7 @@
             </AppLink>
           </div>
 
-          <BorderLine bgColor="#eaeaea" width="98%" location="center" />
+          <AppBorderLine bgColor="#eaeaea" width="98%" location="center" />
 
           <div class="sp__product__price">
             <span>£</span> {{ productDetails.productPrice }}.00
@@ -118,7 +118,7 @@
               </div>
             </div>
 
-            <BorderLine class="sp__last__border" bgColor="#767786" />
+            <AppBorderLine class="sp__last__border" bgColor="#767786" />
           </div>
 
           <div class="sp__product__meta">
@@ -185,7 +185,7 @@
                 </div>
                 <div class="td__image__details__category">Lookbook 2016</div>
 
-                <BorderLine bgColor="#ffffff" width="9%" location="center" />
+                <AppBorderLine bgColor="#ffffff" width="9%" location="center" />
 
                 <div class="td__image__details__description">
                   This jumper is made from a soft cotton-mix with an all-over
@@ -225,7 +225,7 @@
                 </div>
                 <div class="td__image__details__category">Lookbook 2016</div>
 
-                <BorderLine bgColor="#ffffff" width="9%" location="center" />
+                <AppBorderLine bgColor="#ffffff" width="9%" location="center" />
 
                 <div class="td__image__details__description">
                   This jumper is made from a soft cotton-mix with an all-over
@@ -251,7 +251,7 @@
         <Tab :title="`Reviews (${productReview.total})`"
           >Reviews ({{ productReview.total }})</Tab
         >
-        <BorderLine
+        <AppBorderLine
           class="sp-tabs-border"
           bgColor="#e8e8e8"
           width="100%"
@@ -263,7 +263,7 @@
     <!-- Related Products -->
     <div class="related__products">
       <h2>Related Products</h2>
-      <BorderLine bgColor="#000000" width="3%" location="center" />
+      <AppBorderLine bgColor="#000000" width="3%" location="center" />
       <div class="related__products__list">
         <ProductCard
           source="pexels-mikotoraw-3737392.jpg"
@@ -306,7 +306,7 @@ import ProductCard from "../components/ProductCard.vue";
 import AppButton from "../components/AppButton.vue";
 import AppImage from "../components/AppImage.vue";
 import AppLink from "../components/AppLink.vue";
-import BorderLine from "../components/BorderLine.vue";
+import AppBorderLine from "../components/AppBorderLine.vue";
 import RatingStar from "../components/RatingStar.vue";
 import Tabs from "../components/Tabs.vue";
 import Tab from "../components/Tab.vue";
@@ -317,7 +317,7 @@ export default {
   components: {
     InnerImageZoom,
     ProductCard,
-    BorderLine,
+    AppBorderLine,
     RatingStar,
     AppButton,
     AppImage,
