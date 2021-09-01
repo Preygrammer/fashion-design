@@ -16,7 +16,7 @@
           <div class="categories__title">{{ carousel.title }}</div>
           <div class="categories__description">{{ carousel.description }}</div>
           <div class="categories__border__slash"></div>
-          <BorderLine bgColor="#ffffff" width="15%" location="center" />
+          <AppBorderLine bgColor="#ffffff" width="15%" location="center" />
         </div>
       </div>
     </div>
@@ -25,7 +25,7 @@
     <!-- Featured Product -->
     <div class="featured__products">
       <h2>Featured Products</h2>
-      <BorderLine bgColor="#000000" width="3%" location="center" />
+      <AppBorderLine bgColor="#000000" width="3%" location="center" />
       <div class="fpc__container">
         <ProductCard
           source="pexels-mikotoraw-3737392.jpg"
@@ -67,12 +67,12 @@
       >
         <div class="banner__promo__details">
           <h2>{{ banner.title }}</h2>
-          <BorderLine bgColor="#ffffff" width="30%" location="left" />
+          <AppBorderLine bgColor="#ffffff" width="30%" location="left" />
           <div class="banner__promo__category">
             {{ banner.category }}
           </div>
           <div class="banner__promo__btn">
-            <AppButton text="Shop Now" icon="arrow-right" />
+            <AppButton icon="arrow-right">Shop Now</AppButton>
           </div>
         </div>
         <AppImage :imgSrc="banner.source" :alt="banner.source" />
@@ -84,27 +84,47 @@
     <div class="countdown__product__container">
       <div class="countdown__product__title">
         <h4>Most Wanted</h4>
-        <BorderLine bgColor="#515368" width="3%" location="center" />
+        <AppBorderLine bgColor="#515368" width="3%" location="center" />
       </div>
 
       <div class="countdown__timer__container">
-        <CountdownTimer />
+        <CountdownTimer date="12/25/2022" />
       </div>
 
       <!-- <div class="most__wanted__products"> -->
-      <transition-group class="most__wanted__products" tag="div">
-        <ProductCard
+      <!-- <transition-group class="most__wanted__products" tag="div"> -->
+      <!-- <Carousel
+        :loop="true"
+        :pagination-enabled="true"
+        :navigation-enabled="true"
+        :per-page="3"
+        class="most__wanted__products"
+      >
+        <Slide v-for="mwitem in mostWantedItems" :key="mwitem.id">
+          <TheProductCard :imgSrc="mwitem.source"> </TheProductCard>
+        </Slide>
+      </Carousel> -->
+
+      <div class="most__wanted__products">
+        <div
+          class="carousel__slide"
           v-for="mwitem in mostWantedItems"
           :key="mwitem.id"
-          :source="mwitem.source"
-          :title="mwitem.title"
-          :price="mwitem.price"
-          :isSale="mwitem.isSale"
-          width="568px"
-          height="622px"
-        />
-        <!-- </div> -->
-      </transition-group>
+        >
+          <TheProductCard :imgSrc="mwitem.source"> </TheProductCard>
+        </div>
+      </div>
+
+      <!-- <ProductCard
+            :source="mwitem.source"
+            :title="mwitem.title"
+            :price="mwitem.price"
+            :isSale="mwitem.isSale"
+            width="568px"
+            height="622px"
+          /> -->
+      <!-- </div> -->
+      <!-- </transition-group> -->
 
       <div class="mwp__arrows">
         <div @click="mwPrevious" class="arrow__left">
@@ -127,7 +147,7 @@
       <div class="tab__product__content">
         <div class="tab__product__title">
           Best Selling
-          <BorderLine width="10%" bgColor="#000000" location="center" />
+          <AppBorderLine width="10%" bgColor="#000000" location="center" />
         </div>
 
         <div class="tab__product__body">
@@ -145,36 +165,24 @@
 
               <div class="tp__actions__list">
                 <div class="tp__actions__btn">
-                  <AppButton
-                    bgColor="#f1f1f1"
-                    width="50px"
-                    height="50px"
-                    icon="shopping-bag"
-                  />
+                  <AppButton bgColor="#f1f1f1" width="50px" height="50px">
+                    <font-awesome-icon icon="shopping-bag" />
+                  </AppButton>
                 </div>
                 <div class="tp__actions__btn">
-                  <AppButton
-                    bgColor="#f1f1f1"
-                    width="50px"
-                    height="50px"
-                    icon="heart"
-                  />
+                  <AppButton bgColor="#f1f1f1" width="50px" height="50px">
+                    <font-awesome-icon icon="heart" />
+                  </AppButton>
                 </div>
                 <div class="tp__actions__btn">
-                  <AppButton
-                    bgColor="#f1f1f1"
-                    width="50px"
-                    height="50px"
-                    icon="search-plus"
-                  />
+                  <AppButton bgColor="#f1f1f1" width="50px" height="50px">
+                    <font-awesome-icon icon="search-plus" />
+                  </AppButton>
                 </div>
                 <div class="tp__actions__btn">
-                  <AppButton
-                    bgColor="#f1f1f1"
-                    width="50px"
-                    height="50px"
-                    icon="chart-bar"
-                  />
+                  <AppButton bgColor="#f1f1f1" width="50px" height="50px">
+                    <font-awesome-icon icon="chart-bar" />
+                  </AppButton>
                 </div>
               </div>
             </div>
@@ -194,36 +202,24 @@
 
               <div class="tp__actions__list">
                 <div class="tp__actions__btn">
-                  <AppButton
-                    bgColor="#f1f1f1"
-                    width="50px"
-                    height="50px"
-                    icon="shopping-bag"
-                  />
+                  <AppButton bgColor="#f1f1f1" width="50px" height="50px">
+                    <font-awesome-icon icon="shopping-bag" />
+                  </AppButton>
                 </div>
                 <div class="tp__actions__btn">
-                  <AppButton
-                    bgColor="#f1f1f1"
-                    width="50px"
-                    height="50px"
-                    icon="heart"
-                  />
+                  <AppButton bgColor="#f1f1f1" width="50px" height="50px">
+                    <font-awesome-icon icon="heart" />
+                  </AppButton>
                 </div>
                 <div class="tp__actions__btn">
-                  <AppButton
-                    bgColor="#f1f1f1"
-                    width="50px"
-                    height="50px"
-                    icon="search-plus"
-                  />
+                  <AppButton bgColor="#f1f1f1" width="50px" height="50px">
+                    <font-awesome-icon icon="search-plus" />
+                  </AppButton>
                 </div>
                 <div class="tp__actions__btn">
-                  <AppButton
-                    bgColor="#f1f1f1"
-                    width="50px"
-                    height="50px"
-                    icon="chart-bar"
-                  />
+                  <AppButton bgColor="#f1f1f1" width="50px" height="50px">
+                    <font-awesome-icon icon="chart-bar" />
+                  </AppButton>
                 </div>
               </div>
             </div>
@@ -231,19 +227,18 @@
         </div>
         <div class="tab__product__more">
           <AppButton
-            text="View More"
             width="200px"
             border="2px solid #000000"
             textColor="#000000"
-            icon="arrow-right"
-          />
+            >View More <font-awesome-icon icon="arrow-right"
+          /></AppButton>
         </div>
       </div>
 
       <div class="tab__product__content">
         <div class="tab__product__title">
           Top Rate
-          <BorderLine width="10%" bgColor="#000000" location="center" />
+          <AppBorderLine width="10%" bgColor="#000000" location="center" />
         </div>
 
         <div class="tab__product__body">
@@ -261,36 +256,24 @@
 
               <div class="tp__actions__list">
                 <div class="tp__actions__btn">
-                  <AppButton
-                    bgColor="#f1f1f1"
-                    width="50px"
-                    height="50px"
-                    icon="shopping-bag"
-                  />
+                  <AppButton bgColor="#f1f1f1" width="50px" height="50px">
+                    <font-awesome-icon icon="shopping-bag" />
+                  </AppButton>
                 </div>
                 <div class="tp__actions__btn">
-                  <AppButton
-                    bgColor="#f1f1f1"
-                    width="50px"
-                    height="50px"
-                    icon="heart"
-                  />
+                  <AppButton bgColor="#f1f1f1" width="50px" height="50px">
+                    <font-awesome-icon icon="heart" />
+                  </AppButton>
                 </div>
                 <div class="tp__actions__btn">
-                  <AppButton
-                    bgColor="#f1f1f1"
-                    width="50px"
-                    height="50px"
-                    icon="search-plus"
-                  />
+                  <AppButton bgColor="#f1f1f1" width="50px" height="50px">
+                    <font-awesome-icon icon="search-plus" />
+                  </AppButton>
                 </div>
                 <div class="tp__actions__btn">
-                  <AppButton
-                    bgColor="#f1f1f1"
-                    width="50px"
-                    height="50px"
-                    icon="chart-bar"
-                  />
+                  <AppButton bgColor="#f1f1f1" width="50px" height="50px">
+                    <font-awesome-icon icon="chart-bar" />
+                  </AppButton>
                 </div>
               </div>
             </div>
@@ -310,36 +293,24 @@
 
               <div class="tp__actions__list">
                 <div class="tp__actions__btn">
-                  <AppButton
-                    bgColor="#f1f1f1"
-                    width="50px"
-                    height="50px"
-                    icon="shopping-bag"
-                  />
+                  <AppButton bgColor="#f1f1f1" width="50px" height="50px">
+                    <font-awesome-icon icon="shopping-bag" />
+                  </AppButton>
                 </div>
                 <div class="tp__actions__btn">
-                  <AppButton
-                    bgColor="#f1f1f1"
-                    width="50px"
-                    height="50px"
-                    icon="heart"
-                  />
+                  <AppButton bgColor="#f1f1f1" width="50px" height="50px">
+                    <font-awesome-icon icon="heart" />
+                  </AppButton>
                 </div>
                 <div class="tp__actions__btn">
-                  <AppButton
-                    bgColor="#f1f1f1"
-                    width="50px"
-                    height="50px"
-                    icon="search-plus"
-                  />
+                  <AppButton bgColor="#f1f1f1" width="50px" height="50px">
+                    <font-awesome-icon icon="search-plus" />
+                  </AppButton>
                 </div>
                 <div class="tp__actions__btn">
-                  <AppButton
-                    bgColor="#f1f1f1"
-                    width="50px"
-                    height="50px"
-                    icon="chart-bar"
-                  />
+                  <AppButton bgColor="#f1f1f1" width="50px" height="50px">
+                    <font-awesome-icon icon="chart-bar" />
+                  </AppButton>
                 </div>
               </div>
             </div>
@@ -348,19 +319,18 @@
 
         <div class="tab__product__more">
           <AppButton
-            text="View More"
             width="200px"
             border="2px solid #000000"
             textColor="#000000"
-            icon="arrow-right"
-          />
+            >View More <font-awesome-icon icon="arrow-right"
+          /></AppButton>
         </div>
       </div>
 
       <div class="tab__product__content">
         <div class="tab__product__title">
           Special
-          <BorderLine width="10%" bgColor="#000000" location="center" />
+          <AppBorderLine width="10%" bgColor="#000000" location="center" />
         </div>
 
         <div class="tab__product__body">
@@ -378,36 +348,24 @@
 
               <div class="tp__actions__list">
                 <div class="tp__actions__btn">
-                  <AppButton
-                    bgColor="#f1f1f1"
-                    width="50px"
-                    height="50px"
-                    icon="shopping-bag"
-                  />
+                  <AppButton bgColor="#f1f1f1" width="50px" height="50px">
+                    <font-awesome-icon icon="shopping-bag" />
+                  </AppButton>
                 </div>
                 <div class="tp__actions__btn">
-                  <AppButton
-                    bgColor="#f1f1f1"
-                    width="50px"
-                    height="50px"
-                    icon="heart"
-                  />
+                  <AppButton bgColor="#f1f1f1" width="50px" height="50px">
+                    <font-awesome-icon icon="heart" />
+                  </AppButton>
                 </div>
                 <div class="tp__actions__btn">
-                  <AppButton
-                    bgColor="#f1f1f1"
-                    width="50px"
-                    height="50px"
-                    icon="search-plus"
-                  />
+                  <AppButton bgColor="#f1f1f1" width="50px" height="50px">
+                    <font-awesome-icon icon="search-plus" />
+                  </AppButton>
                 </div>
                 <div class="tp__actions__btn">
-                  <AppButton
-                    bgColor="#f1f1f1"
-                    width="50px"
-                    height="50px"
-                    icon="chart-bar"
-                  />
+                  <AppButton bgColor="#f1f1f1" width="50px" height="50px">
+                    <font-awesome-icon icon="chart-bar" />
+                  </AppButton>
                 </div>
               </div>
             </div>
@@ -427,36 +385,24 @@
 
               <div class="tp__actions__list">
                 <div class="tp__actions__btn">
-                  <AppButton
-                    bgColor="#f1f1f1"
-                    width="50px"
-                    height="50px"
-                    icon="shopping-bag"
-                  />
+                  <AppButton bgColor="#f1f1f1" width="50px" height="50px">
+                    <font-awesome-icon icon="shopping-bag" />
+                  </AppButton>
                 </div>
                 <div class="tp__actions__btn">
-                  <AppButton
-                    bgColor="#f1f1f1"
-                    width="50px"
-                    height="50px"
-                    icon="heart"
-                  />
+                  <AppButton bgColor="#f1f1f1" width="50px" height="50px">
+                    <font-awesome-icon icon="heart" />
+                  </AppButton>
                 </div>
                 <div class="tp__actions__btn">
-                  <AppButton
-                    bgColor="#f1f1f1"
-                    width="50px"
-                    height="50px"
-                    icon="search-plus"
-                  />
+                  <AppButton bgColor="#f1f1f1" width="50px" height="50px">
+                    <font-awesome-icon icon="search-plus" />
+                  </AppButton>
                 </div>
                 <div class="tp__actions__btn">
-                  <AppButton
-                    bgColor="#f1f1f1"
-                    width="50px"
-                    height="50px"
-                    icon="chart-bar"
-                  />
+                  <AppButton bgColor="#f1f1f1" width="50px" height="50px">
+                    <font-awesome-icon icon="chart-bar" />
+                  </AppButton>
                 </div>
               </div>
             </div>
@@ -465,12 +411,11 @@
 
         <div class="tab__product__more">
           <AppButton
-            text="View More"
             width="200px"
             border="2px solid #000000"
             textColor="#000000"
-            icon="arrow-right"
-          />
+            >View More <font-awesome-icon icon="arrow-right"
+          /></AppButton>
         </div>
       </div>
     </div>
@@ -480,10 +425,10 @@
     <div class="fob__container">
       <div class="fob__title">
         From Our Blog
-        <BorderLine bgColor="#515368" width="3%" location="center" />
+        <AppBorderLine bgColor="#515368" width="3%" location="center" />
       </div>
       <TransitionGroup class="fob__slide__container" tag="div">
-        <Slide
+        <Slider
           v-for="item in blogItems"
           :key="item.id"
           :imgSrc="item.imgSrc"
@@ -509,18 +454,18 @@
         <div class="newsletter__details">
           <img src="../assets/img/envelope-open.svg" />
           <h2 style="color: white">Sign up for newsletter</h2>
-          <BorderLine bgColor="#ffffff" width="3%" location="center" />
+          <AppBorderLine bgColor="#ffffff" width="3%" location="center" />
           <p>To Receive Updates</p>
         </div>
         <div class="newsletter__form">
           <AppInput placeholder="Enter your email address here..." />
           <AppButton
-            text="Subscribe"
-            icon="arrow-right"
             bgColor="#000000"
             textColor="#ffffff"
             border="2px solid #000000"
-          />
+          >
+            Subscribe <font-awesome-icon icon="arrow-right"
+          /></AppButton>
         </div>
       </Overlay>
     </div>
@@ -532,30 +477,32 @@
 // @ is an alias to /src
 
 import AppSliderBullet from "@/components/AppSliderBullet.vue";
-import ProductCard from "@/components/ProductCard.vue";
-import BorderLine from "@/components/BorderLine.vue";
-import CountdownTimer from "@/components/CountdownTimer.vue";
-import RatingStar from "@/components/RatingStar.vue";
+import AppBorderLine from "@/components/AppBorderLine.vue";
 import AppButton from "@/components/AppButton.vue";
 import AppImage from "@/components/AppImage.vue";
-import Slide from "@/components/Slide.vue";
 import AppInput from "@/components/AppInput.vue";
+import Slider from "@/components/Slider.vue";
+import CountdownTimer from "../components/CountdownTimer.vue";
+import ProductCard from "../components/ProductCard.vue";
+import TheProductCard from "../components/TheProductCard.vue";
+import RatingStar from "@/components/RatingStar.vue";
 import Overlay from "@/components/Overlay.vue";
 import "../assets/scss/pages/_home.scss";
 
 export default {
   name: "Home",
   components: {
-    AppSliderBullet,
-    CountdownTimer,
-    ProductCard,
-    BorderLine,
-    RatingStar,
-    Overlay,
+    AppInput,
+    AppBorderLine,
     AppButton,
     AppImage,
-    Slide,
-    AppInput,
+    AppSliderBullet,
+    Slider,
+    CountdownTimer,
+    ProductCard,
+    TheProductCard,
+    RatingStar,
+    Overlay,
   },
   props: {
     height: String,
@@ -714,6 +661,15 @@ export default {
           title: "Summer Collection",
         },
       ],
+      options: {
+        currentPage: 0,
+        tracking: false,
+        thresholdDistance: 100,
+        thresholdTime: 300,
+        infinite: 2,
+        slidesToScroll: 2,
+        loop: true,
+      },
     };
   },
   computed: {
