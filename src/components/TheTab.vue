@@ -9,7 +9,7 @@ export default {
   props: {
     title: {
       type: String,
-      default: "Tab",
+      default: "TheTab",
     },
   },
   data() {

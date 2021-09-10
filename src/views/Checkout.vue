@@ -197,10 +197,10 @@
 
           <AppBorderLine bgColor="#dbdbdb" width="100%" location="center" />
 
-          <Shipping>
-            <div class="shipping__title">Shipping</div>
-            <ShippingOption :shippingOptions="shippingOptions" />
-          </Shipping>
+          <AppShipping>
+            <div class="shipping__title">AppShipping</div>
+            <AppShippingOption :shippingOptions="shippingOptions" />
+          </AppShipping>
 
           <AppBorderLine bgColor="#dbdbdb" width="100%" location="center" />
 
@@ -291,8 +291,8 @@ import CartHeadingTitle from "../components/CartHeadingTitle.vue";
 import CartItems from "../components/CartItems.vue";
 import CartProduct from "../components/CartProduct.vue";
 import AppForm from "../components/AppForm.vue";
-import Shipping from "../components/Shipping.vue";
-import ShippingOption from "../components/ShippingOption.vue";
+import AppShipping from "../components/AppShipping.vue";
+import AppShippingOption from "../components/AppShippingOption.vue";
 
 import VueAccordion from "@ztrehagem/vue-accordion";
 import "@ztrehagem/vue-accordion/dist/vue-accordion.css";
@@ -314,8 +314,8 @@ export default {
     CartHeadingTitle,
     CartProduct,
     AppForm,
-    Shipping,
-    ShippingOption,
+    AppShipping,
+    AppShippingOption,
     VueAccordion,
   },
   props: {},

@@ -18,10 +18,10 @@
 </template>
 
 <script>
-import AppInput from "../components/AppInput.vue";
+import AppInput from "./AppInput.vue";
 
 export default {
-  name: "ShippingOption",
+  name: "AppShippingOption",
   components: {
     AppInput,
   },

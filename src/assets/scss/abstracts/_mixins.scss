@@ -18,6 +18,11 @@
     align-items: center;
 }
 
+@mixin flex-content-center {
+    display: flex;
+    justify-content: center;
+}
+
 @mixin flex-center-end {
     display: flex;
     justify-content: flex-end;

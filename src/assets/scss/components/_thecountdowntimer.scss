@@ -1,0 +1,22 @@
+.countdown__timer__content {
+    @include flex-content-center;
+    margin-top: 80px;
+    margin-bottom: 84px;
+    gap: 100px;
+}
+
+.countdown__timer__details {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 2px;
+}
+
+.ct__number {
+    @include font-selection($Oswald, 50px, $regular, #ffffff);
+}
+
+.ct__text {
+    @include font-selection($Oswald, 20px, $regular, #ffffff);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}

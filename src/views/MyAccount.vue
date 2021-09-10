@@ -14,7 +14,7 @@
         width="5%"
         location="center"
       />
-      <Overlay class="account__hero__overlay" />
+      <AppOverlay class="account__hero__overlay" />
     </div>
 
     <div class="account__body">
@@ -134,7 +134,7 @@ import AppButton from "../components/AppButton.vue";
 import AppForm from "../components/AppForm.vue";
 import AppTextarea from "../components/AppTextarea.vue";
 import AppBorderLine from "../components/AppBorderLine.vue";
-import Overlay from "../components/Overlay.vue";
+import AppOverlay from "../components/AppOverlay.vue";
 
 import "../assets/scss/pages/_myaccount.scss";
 
@@ -146,7 +146,7 @@ export default {
     AppForm,
     AppTextarea,
     AppBorderLine,
-    Overlay,
+    AppOverlay,
   },
 };
 </script>

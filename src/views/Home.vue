@@ -88,56 +88,68 @@
       </div>
 
       <div class="countdown__timer__container">
-        <CountdownTimer date="12/25/2022" />
+        <TheCountdownTimer date="12/25/2022" />
       </div>
 
-      <!-- <div class="most__wanted__products"> -->
-      <!-- <transition-group class="most__wanted__products" tag="div"> -->
-      <!-- <Carousel
-        :loop="true"
-        :pagination-enabled="true"
-        :navigation-enabled="true"
-        :per-page="3"
-        class="most__wanted__products"
+      <VueperSlides
+        class="no-shadow"
+        ref="mostWantedSlides"
+        :visible-slides="3"
+        :gap="2"
+        :dragging-distance="270"
+        slide-multiple
+        transition-speed="250"
+        @slide="
+          $refs.mostWantedSlidesDetails &&
+            $refs.mostWantedSlidesDetails.goToSlide($event.currentSlide.index, {
+              emit: false,
+            })
+        "
       >
-        <Slide v-for="mwitem in mostWantedItems" :key="mwitem.id">
-          <TheProductCard :imgSrc="mwitem.source"> </TheProductCard>
-        </Slide>
-      </Carousel> -->
-
-      <div class="most__wanted__products">
-        <div
-          class="carousel__slide"
+        <VueperSlide
           v-for="mwitem in mostWantedItems"
           :key="mwitem.id"
-        >
-          <TheProductCard :imgSrc="mwitem.source"> </TheProductCard>
-        </div>
-      </div>
+          :image="dynamicImageSource(mwitem.source)"
+        />
+      </VueperSlides>
 
-      <!-- <ProductCard
-            :source="mwitem.source"
-            :title="mwitem.title"
-            :price="mwitem.price"
-            :isSale="mwitem.isSale"
-            width="568px"
-            height="622px"
-          /> -->
-      <!-- </div> -->
-      <!-- </transition-group> -->
+      <!-- <VueperSlides
+        class="no-shadow"
+        ref="mostWantedSlidesDetails"
+        :visible-slides="3"
+        :gap="2"
+        :dragging-distance="270"
+        slide-multiple
+        transition-speed="250"
+        @slide="
+          $refs.mostWantedSlides &&
+            $refs.mostWantedSlides.goToSlide($event.currentSlide.index, {
+              emit: false,
+            })
+        "
+      >
+        <VueperSlide v-for="mwitem in mostWantedItems" :key="mwitem.id">
+          <template class="fpc__image" #content>
+            <div class="fpc__details">
+              <div class="fpc__details_title">
+                {{ mwitem.title }}
+              </div>
+              <div v-if="mwitem.price" class="fpc__details_price">
+                <span>£</span>{{ mwitem.price }}.00
+              </div>
+            </div>
+          </template>
+        </VueperSlide>
+      </VueperSlides> -->
 
       <div class="mwp__arrows">
-        <div @click="mwPrevious" class="arrow__left">
+        <div @click="$refs.mostWantedSlides.previous()" class="arrow__left">
           <img src="../assets/img/arrow.png" />
         </div>
-        <div @click="mwNext" class="arrow__right">
+        <div @click="$refs.mostWantedSlides.next()" class="arrow__right">
           <img src="../assets/img/arrow.png" />
         </div>
       </div>
-      <AppSliderBullet
-        :bullets="mostWantedItems.length"
-        @moveSlide="handleFunctionCall($event, $event)"
-      />
     </div>
 
     <!-- Countdown Product -->
@@ -427,7 +439,7 @@
         From Our Blog
         <AppBorderLine bgColor="#515368" width="3%" location="center" />
       </div>
-      <TransitionGroup class="fob__slide__container" tag="div">
+      <!-- <TransitionGroup class="fob__slide__container" tag="div">
         <Slider
           v-for="item in blogItems"
           :key="item.id"
@@ -437,20 +449,80 @@
           :postCommentsTotal="item.postCommentsTotal"
           :postCategory="item.postCategory"
         />
-      </TransitionGroup>
+      </TransitionGroup> -->
 
-      <div class="carousel-controls">
-        <button class="carousel-controls__button" @click="previous">
-          &#60;
-        </button>
-        <button class="carousel-controls__button" @click="next">&#62;</button>
-      </div>
+      <VueperSlides
+        ref="slideImage"
+        @slide="
+          $refs.slideDetails &&
+            $refs.slideDetails.goToSlide($event.currentSlide.index, {
+              emit: false,
+            })
+        "
+        class="no-shadow"
+        slide-multiple
+        :visible-slides="3"
+        :gap="2"
+        :dragging-distance="270"
+        :bullets="false"
+        transition-speed="250"
+      >
+        <VueperSlide
+          v-for="item in blogItems"
+          :key="item.id"
+          :image="dynamicImageSource(item.imgSrc)"
+        />
+      </VueperSlides>
+
+      <VueperSlides
+        ref="slideDetails"
+        @slide="
+          $refs.slideImage &&
+            $refs.slideImage.goToSlide($event.currentSlide.index, {
+              emit: false,
+            })
+        "
+        class="no-shadow slide-details-parent"
+        slide-multiple
+        :visible-slides="3"
+        :gap="2"
+        :dragging-distance="50"
+        transition-speed="250"
+      >
+        <VueperSlide v-for="item in blogItems" :key="item.id">
+          <template class="fob__slide" #content>
+            <div class="fob__slide__details">
+              <div class="fob__sd__category text-center">
+                {{ item.postCategory }}
+                <AppBorderLine
+                  width="10%"
+                  bgColor="#000000"
+                  location="center"
+                />
+              </div>
+              <div class="fob__sd__details">
+                <div class="fob__post__title text-center">
+                  {{ item.postTitle }}
+                </div>
+                <div class="fob__post__details">
+                  <div class="fob__post__user">
+                    By: <span>{{ item.postUser }} </span>
+                  </div>
+                  <div class="fob__post__comments">
+                    | &nbsp; {{ item.postCommentsTotal }} comments
+                  </div>
+                </div>
+              </div>
+            </div>
+          </template>
+        </VueperSlide>
+      </VueperSlides>
     </div>
     <!-- From Our Blog -->
 
     <!-- Newsletter Sign up -->
     <div class="newsletter__container">
-      <Overlay>
+      <AppOverlay>
         <div class="newsletter__details">
           <img src="../assets/img/envelope-open.svg" />
           <h2 style="color: white">Sign up for newsletter</h2>
@@ -467,7 +539,7 @@
             Subscribe <font-awesome-icon icon="arrow-right"
           /></AppButton>
         </div>
-      </Overlay>
+      </AppOverlay>
     </div>
     <!-- Newsletter Sign up -->
   </div>
@@ -476,18 +548,20 @@
 <script>
 // @ is an alias to /src
 
-import AppSliderBullet from "@/components/AppSliderBullet.vue";
+// import AppSliderBullet from "@/components/AppSliderBullet.vue";
 import AppBorderLine from "@/components/AppBorderLine.vue";
 import AppButton from "@/components/AppButton.vue";
 import AppImage from "@/components/AppImage.vue";
 import AppInput from "@/components/AppInput.vue";
-import Slider from "@/components/Slider.vue";
-import CountdownTimer from "../components/CountdownTimer.vue";
+// import Slider from "@/components/Slider.vue";
+import TheCountdownTimer from "../components/TheCountdownTimer.vue";
 import ProductCard from "../components/ProductCard.vue";
-import TheProductCard from "../components/TheProductCard.vue";
 import RatingStar from "@/components/RatingStar.vue";
-import Overlay from "@/components/Overlay.vue";
+import AppOverlay from "@/components/AppOverlay.vue";
 import "../assets/scss/pages/_home.scss";
+
+import { VueperSlides, VueperSlide } from "vueperslides";
+import "vueperslides/dist/vueperslides.css";
 
 export default {
   name: "Home",
@@ -496,13 +570,14 @@ export default {
     AppBorderLine,
     AppButton,
     AppImage,
-    AppSliderBullet,
-    Slider,
-    CountdownTimer,
+    // AppSliderBullet,
+    // Slider,
+    TheCountdownTimer,
     ProductCard,
-    TheProductCard,
     RatingStar,
-    Overlay,
+    AppOverlay,
+    VueperSlides,
+    VueperSlide,
   },
   props: {
     height: String,
@@ -603,10 +678,18 @@ export default {
         },
         {
           id: 4,
-          imgSrc: "pexels-mídia-1454184.jpg",
+          imgSrc: "pexels-mika-borgia-1317712.jpg",
           postTitle: "Dramatically scale centric",
           postUser: "John Doe",
           postCommentsTotal: 3,
+          postCategory: "Fashion",
+        },
+        {
+          id: 5,
+          imgSrc: "pexels-philip-boakye-910143.jpg",
+          postTitle: "Dramatically scale centric",
+          postUser: "John Doe",
+          postCommentsTotal: 2,
           postCategory: "Fashion",
         },
       ],
@@ -628,6 +711,27 @@ export default {
         },
         {
           id: 3,
+          source: "pexels-godisable-jacob-2703181.jpg",
+          title: "Report Demin",
+          price: 89,
+          isSale: false,
+        },
+        {
+          id: 4,
+          source: "pexels-anfisa-eremina-2543042.jpg",
+          title: "Report Demin",
+          price: 89,
+          isSale: false,
+        },
+        {
+          id: 5,
+          source: "pexels-philip-boakye-1813947.jpg",
+          title: "Report Demen",
+          price: 89,
+          isSale: false,
+        },
+        {
+          id: 6,
           source: "pexels-godisable-jacob-2703181.jpg",
           title: "Report Demin",
           price: 89,
@@ -661,15 +765,13 @@ export default {
           title: "Summer Collection",
         },
       ],
-      options: {
-        currentPage: 0,
-        tracking: false,
-        thresholdDistance: 100,
-        thresholdTime: 300,
-        infinite: 2,
-        slidesToScroll: 2,
-        loop: true,
-      },
+      //Slide Content
+      sliderContentData: [
+        {
+          title: "",
+          price: 0,
+        },
+      ],
     };
   },
   computed: {
@@ -690,13 +792,9 @@ export default {
       const last = this.blogItems.pop();
       this.blogItems = [last].concat(this.blogItems);
     },
-    mwNext() {
-      const first = this.mostWantedItems.shift();
-      this.mostWantedItems = this.mostWantedItems.concat(first);
-    },
-    mwPrevious() {
-      const last = this.mostWantedItems.pop();
-      this.mostWantedItems = [last].concat(this.mostWantedItems);
+    //Concatenate Dynamic Image Source
+    dynamicImageSource(source) {
+      return require(`../assets/img/${source}`);
     },
     //categories image background image dynamic source
     categoriesCssStyle(imageSource) {

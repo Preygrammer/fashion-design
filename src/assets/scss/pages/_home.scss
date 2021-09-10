@@ -187,11 +187,12 @@
 
 .mwp__arrows {
     position: absolute;
-    top: 55%;
+    top: 60%;
     left: 0;
     display: flex;
     width: 100%;
     justify-content: center;
+    z-index: 99;
 }
 
 .mwp__arrows .arrow__left {
@@ -203,6 +204,17 @@
     position: absolute;
     left: 1175px;
     transform: scaleX(-1);
+}
+
+//Vueper Slides
+.vueperslides__bullets {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.vueperslides__arrow--next,
+.vueperslides__arrow--prev {
+    display: none;
 }
 
 
@@ -314,10 +326,7 @@
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
-}
-
-.fob__slide__container {
-    overflow: hidden;
+    padding-bottom: 70px;
 }
 
 .fob__slide {
@@ -329,19 +338,58 @@
     }
 }
 
-.animation__slide {
-    -webkit-animation: linear infinite;
-    -webkit-animation-name: run;
-    -webkit-animation-duration: 3s;
+// From Our Blog Sliders
+.fob__slide__container {
+    display: flex;
+    margin-right: -15px;
+    margin-left: -15px;
+    padding-top: 70px;
 }
 
-@keyframes run {
-    0% {
-        left: 0;
-    }
-    100% {
-        left: 100%;
-    }
+.fob__slide__container .fpc__image {
+    height: 100%;
+}
+
+.fob__slide {
+    height: 100%;
+}
+
+.fob__slide__details {
+    background-color: #ffffff;
+    padding: 42px 0 48px;
+}
+
+.fob__sd__category {
+    font-family: "Oswald";
+    font-weight: light;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #9a9a9a;
+}
+
+.fob__post__details {
+    display: flex;
+    justify-content: center;
+}
+
+.fob__post__title {
+    font-family: "Playfair", serif;
+    font-size: 30px;
+}
+
+.fob__post__user,
+.fob__post__comments {
+    font-family: "Poppins";
+    font-size: 13px;
+}
+
+.fob__post__user {
+    margin-right: 10px;
+}
+
+.slide-details-parent .vueperslides__parallax-wrapper {
+    padding-bottom: 10.3333% !important;
 }
 
 
@@ -391,28 +439,25 @@
 }
 
 .newsletter__form {
-    display: flex;
-    justify-content: center;
+    @include flex-center-all;
     flex-flow: column;
-    align-items: center;
     margin-top: 20px;
     input {
+        @include font-selection($Poppins,
+        13px);
         background-color: transparent;
+        outline: none;
         border: none;
         border-bottom: 2px solid #484848;
         line-height: 44px;
-        outline: none;
-        text-align: center;
         width: 30%;
-        font-family: "Poppins";
-        font-size: 13px;
+        text-align: center;
         color: #767676;
+        margin-bottom: 32px;
     }
     form {
-        display: flex;
+        @include flex-center-all;
         flex-direction: column;
-        align-items: center;
-        text-align: center;
     }
 }
 

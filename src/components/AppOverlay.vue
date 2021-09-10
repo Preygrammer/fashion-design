@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "Overlay",
+  name: "AppOverlay",
 };
 </script>
 

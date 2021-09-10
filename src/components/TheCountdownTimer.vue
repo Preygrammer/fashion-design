@@ -20,8 +20,9 @@
 </template>
 
 <script>
+import "../assets/scss/components/_thecountdowntimer.scss";
 export default {
-  name: "CountdownTimer",
+  name: "TheCountdownTimer",
 
   data() {
     return {
@@ -64,35 +65,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.countdown__timer__content {
-  margin-top: 80px;
-  margin-bottom: 84px;
-  display: flex;
-  justify-content: center;
-  gap: 100px;
-}
-
-.countdown__timer__details {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 2px;
-}
-
-.ct__number {
-  font-family: "Oswald";
-  font-weight: normal;
-  font-size: 50px;
-  color: #ffffff;
-}
-
-.ct__text {
-  font-family: "Oswald";
-  font-weight: normal;
-  font-size: 20px;
-  color: #ffffff;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-}
-</style>

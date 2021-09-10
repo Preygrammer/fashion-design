@@ -168,8 +168,8 @@
     </div>
     <!-- Static only first coz I'm confused on the flow or how it works -->
     <div class="single__product__tabs">
-      <Tabs class="">
-        <Tab title="Description">
+      <TheTabs class="">
+        <TheTab title="Description">
           <div class="tab__description">
             <div class="td__image__first">
               <AppImage
@@ -246,10 +246,10 @@
               </div>
             </div>
           </div>
-        </Tab>
-        <Tab title="Additional Information">Additional Information</Tab>
-        <Tab :title="`Reviews (${productReview.total})`"
-          >Reviews ({{ productReview.total }})</Tab
+        </TheTab>
+        <TheTab title="Additional Information">Additional Information</TheTab>
+        <TheTab :title="`Reviews (${productReview.total})`"
+          >Reviews ({{ productReview.total }})</TheTab
         >
         <AppBorderLine
           class="sp-tabs-border"
@@ -257,7 +257,7 @@
           width="100%"
           location="center"
         />
-      </Tabs>
+      </TheTabs>
     </div>
 
     <!-- Related Products -->
@@ -308,8 +308,8 @@ import AppImage from "../components/AppImage.vue";
 import AppLink from "../components/AppLink.vue";
 import AppBorderLine from "../components/AppBorderLine.vue";
 import RatingStar from "../components/RatingStar.vue";
-import Tabs from "../components/Tabs.vue";
-import Tab from "../components/Tab.vue";
+import TheTabs from "../components/TheTabs.vue";
+import TheTab from "../components/TheTab.vue";
 import "../assets/scss/pages/_singleproduct.scss";
 
 export default {
@@ -322,8 +322,8 @@ export default {
     AppButton,
     AppImage,
     AppLink,
-    Tabs,
-    Tab,
+    TheTabs,
+    TheTab,
   },
   data() {
     return {
