@@ -1,6 +1,6 @@
-import { GET_PRODUCT } from './types.js';
+import { GET_PRODUCTS } from './types.js';
 
 export default {
-    [SET_USER]() {},
-    [SET_USER_LOCATION]() {}
+    [GET_PRODUCTS]() {},
+    // [SET_USER_LOCATION]() {}
 }

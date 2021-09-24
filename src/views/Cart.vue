@@ -41,7 +41,7 @@
           </div>
           <AppBorderLine bgColor="#dadada" width="100%" location="center" />
           <AppShipping>
-            <div class="shipping__title">AppShipping</div>
+            <div class="shipping__title">Shipping</div>
             <AppShippingOption :shippingOptions="shippingOptions" />
           </AppShipping>
 
