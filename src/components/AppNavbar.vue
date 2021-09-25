@@ -12,7 +12,7 @@
       </div>
       <div class="right__side">
         <AppIcon icon="search" />
-        <AppIcon icon="shopping-bag" :shoppingBagCount="3" />
+        <AppIcon url="/cart" icon="shopping-bag" :shoppingBagCount="3" />
         <AppIcon icon="bars" />
       </div>
     </div>

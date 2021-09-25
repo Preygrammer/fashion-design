@@ -1,6 +1,6 @@
 <template>
   <div class="icon__wrapper">
-    <font-awesome-icon :icon="icon" />
+    <font-awesome-icon @click="goToLink(url)" :icon="icon" />
     <span class="shopping__bag__count" v-if="shoppingBagCount">{{
       shoppingBagCount
     }}</span>
@@ -15,10 +15,19 @@ export default {
     url: String,
     shoppingBagCount: Number,
   },
+  methods: {
+    goToLink(url) {
+      url == null ? "" : (window.location = url);
+    },
+  },
 };
 </script>
 
 <style>
+svg:hover {
+  cursor: pointer;
+}
+
 .icon__wrapper {
   position: relative;
 }
