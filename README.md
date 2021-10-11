@@ -40,7 +40,7 @@ Fashion Design requires [Node.js](https://nodejs.org/) to run.
    ```
 4. Compiles and hot-reloads for development
    ```
-   npm run serve
+   npm run dev
    ```
 
 # OR
