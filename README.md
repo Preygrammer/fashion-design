@@ -5,6 +5,12 @@
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://github.com/Preygrammer/fashion-design.git)
 
+## Available Pages
+- Home Page - /
+- Single Product Page - /product
+- Cart Page - /cart
+- My Account Page - /my-account
+
 Fashion Design is all about giving you the fashion you need to feel glam and fab. As a brand that is all about fashion, we want to help you find your individuality through style. We want you to own yourself, simply by being you and enjoying fashion.
 
 ## Features
@@ -70,4 +76,3 @@ MIT
    [jQuery]: <http://jquery.com>
    [Axios]: <https://github.com/axios/axios>
    [VueJS]: <https://vuejs.org/>
-
